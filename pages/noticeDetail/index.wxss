@@ -1,0 +1,25 @@
+page{
+  background: #fff;
+}
+.content{
+  box-sizing: border-box;
+  margin-top: 66px;
+  padding: 20px 0;
+}
+.notice-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color: black;
+  padding-top:30rpx;
+}
+.notic-from{
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  color:grey;
+  justify-content: space-between;
+  margin-top:30rpx;
+  margin-bottom: 30rpx;
+}

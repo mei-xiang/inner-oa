@@ -1,0 +1,25 @@
+<form bindsubmit="Submit">
+  <view class="row">
+      <picker mode="date" value="{{date}}" start="2019-09-01" bindchange="bindDateChange">111</picker>
+      <view><text>*</text>时间</view>
+      <input placeholder="请选择" name='time' value="{{form_.time}}" disabled="disabled"></input>
+  </view>
+  <view class="row">
+      <picker value="{{date}}" bindchange="bindDateChange2" range="{{array}}">111</picker>
+      <view><text>*</text>上午项目</view>
+      <input name='sw_xm' value="{{form_.sw_xm}}" disabled="disabled" placeholder="请选择"></input>
+  </view>
+  <view class="row">
+      <view><text>*</text>上午备注</view>
+      <input name='sw_bz'></input>
+  </view>
+  <view class="row">
+      <view><text>*</text>下午项目</view>
+      <input name='xw_xm' placeholder="请选择" disabled="disabled"></input>
+  </view>
+  <view class="row">
+      <view><text>*</text>下午备注</view>
+      <input name='xw_bz'></input>
+  </view>
+  <button form-type="submit">提交</button>
+</form>

@@ -1,0 +1,37 @@
+page{
+  background: #F0F4F7;
+}
+.mid{
+  margin-top: 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background: #FFf;
+  padding-left: 32rpx;
+  border-bottom: 2rpx solid #F2F2F2;
+  border-top: 2rpx solid #F2F2F2;
+}
+.mid .row{
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 2rpx solid #F2F2F2;
+  height: 100rpx;
+  position: relative;
+  line-height: 100rpx;
+  color: #000;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.mid .row:last-child{
+  border-bottom: none;
+}
+.mid .row image {
+  box-sizing: border-box;
+	float: left;
+	width: 80rpx;
+	height: 80rpx;
+	margin-right: 20rpx;
+	/* border: 1px solid #BFBFBF; */
+  border-radius: 8rpx;
+  margin-top:9rpx;
+	overflow: hidden;
+}

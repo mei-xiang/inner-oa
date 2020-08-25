@@ -1,0 +1,44 @@
+/* pages/index-new/index.wxss */
+page{
+  padding: 50rpx 20rpx 0;
+  box-sizing: border-box;
+}
+.row{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 26rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 20rpx;
+  position: relative;
+}
+.row picker{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  opacity: 0;
+}
+.row text{
+  color: red;
+}
+.row view{
+  width: 25%;
+}
+.row input{
+  width: 50%;
+  padding-left: 5rpx;
+  box-sizing: border-box;
+  height: 40rpx;
+}
+button{
+  background: #00A2E9;
+  font-size: 28rpx;
+  border-radius: 0;
+  color: white;
+  margin-top: 500rpx;
+}

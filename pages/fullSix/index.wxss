@@ -1,0 +1,233 @@
+page{
+  background: #F0F4F7;
+}
+.content{
+  margin-top: 66px;
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+}
+.stepBody{
+  margin: 32px 40px 32px 32px;
+}
+.stepBody .item{
+  box-sizing: border-box;
+  float: left;
+  width: 20%;
+  height: 1px;
+}
+.stepBody .item .con{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.stepBody .item .con::after{
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 1px;
+  background: #BBBBBB;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.stepBody .item .con.active::after{
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 1px;
+  background: #2B8EC8;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.stepBody .item .con .round{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #BBBBBB;
+  background: #F0F4F7;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 888;
+}
+
+.stepBody .item .con .round.active{
+  border: 2px solid #2B8EC8;
+}
+
+.stepBody .item .con .round.left{
+  left: 0;
+}
+.stepBody .item .con .round.right{
+  right: -8px;
+}
+.bodyTitle{
+  box-sizing: border-box;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  background-color: rgba(43, 142, 200, 1);
+  color: #FFF;
+  font-size: 12px;
+  padding: 0 16px;
+}
+.title{
+  margin-top: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  background: #FFF;
+  height: 40px;
+  line-height: 40px;
+  padding:0 16px;
+  font-size: 12px;
+  color: #101010;
+  border-bottom: 1px solid #F2F2F2; 
+}
+.mainBody{
+  box-sizing: border-box;
+  width: 100%;
+  background: #FFF;
+  padding:0 16px;
+}
+.mainBody .row{
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #F2F2F2;
+  position: relative;
+  
+}
+.mainBody .area{
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  padding: 10px 0 0 0 ;
+}
+
+.mainBody .area button{
+  float: left;
+  width: 32%;
+  height: 30px;
+  border-radius: 2px;
+  background-color: rgba(68, 151, 193, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 12px;
+  border: none;
+  margin-right: 2%;
+  margin-bottom: 10px;
+}
+.mainBody .area button:nth-child(3n){
+  margin-right: 0;
+}
+.mainBody .row.more{
+  height: 100px;
+}
+.mainBody .row .label{
+  box-sizing: border-box;
+  width: 30%;
+  line-height: 40px;
+  font-size: 12px;
+  color: #101010;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.mainBody .row .label.mustFill::before{
+  content: '*';
+  display: inline-block;
+  color: red;
+}
+.mainBody .row .main{
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 30%;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
+  font-size: 12px;
+  color: #101010;
+}
+.mainBody .row .main .picker{
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #101010;
+  position: relative;
+  text-align: right;
+}
+.mainBody .row .main input{
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #101010;
+  position: relative;
+  text-align: right;
+}
+
+.mainBody .row .main .infoText{
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #101010;
+  position: relative;
+  margin: 0;
+  text-align: left;
+}
+.mainBody .row .main button{
+  float: right;
+  box-sizing: border-box;
+  width: 30%;
+  height: 26px;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 10px;
+  margin: 7px 0 7px 3%;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.mainBody .row .main button.check{
+  background: #5D5D5D;
+}
+.mainBody .row .main button.add{
+  background: #3AADFE;
+}
+.mainBody .row .main button.delete{
+  background: #C8342B;
+}
+.btn{
+  box-sizing: border-box;
+  margin: 50px 32px;
+}
+.btn .backBtn{
+  float: left;
+  width: 120px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #C8342B;
+  color: #FFF;
+  font-size: 14px;
+}
+.btn .nextBtn{
+  float: right;
+  width: 120px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: rgba(43, 142, 200, 1);
+  color: #FFF;
+  font-size: 14px;
+}

@@ -1,0 +1,8 @@
+page{
+  background: #F0F4F7;
+}
+.content{
+  box-sizing: border-box;
+  margin-top: 66px;
+  padding: 20px 0;
+}

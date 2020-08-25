@@ -1,0 +1,248 @@
+<view class="page">
+  <view class='nav bg-main' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      {{title}}
+      <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+    </view>
+  </view>
+  <view style="height:{{navH}}px"></view>
+  <view class="all-box">
+    <form bindsubmit='submitCustomForm'>
+      <view class='content'>
+        <block wx:for='{{myFieldList}}' wx:key='' wx:for-index="bindex">
+          <!-- 普通输入框  -->
+          <view class='row' wx:if='{{item.inputType == "text"}}'>
+            <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            <view class='main'>
+              <block wx:if='{{item.fieldAttribute === "double"}}'>
+                <block wx:if="{{item.fieldUnit}}">
+                  <block wx:if="{{item.fieldUnit === '天'}}">
+                    <input class="jine" id='{{item.fieldKey}}' type="digit" disabled="{{disabled}}" name='{{item.fieldKey}}' maxlength='{{50}}' placeholder='请输入您的{{item.fieldValue}}(仅数字)' placeholder-class='{{fillTipList[item.fieldKey]}}' value="{{days}}"></input>
+                  </block>
+                  <block wx:elif="{{item.fieldUnit === '元' && title === '报销申请'}}">
+                    <input class="jine" id='{{item.fieldKey}}' disabled="{{disabled}}" type="digit" name='{{item.fieldKey}}' maxlength='{{50}}' placeholder='请输入您的{{item.fieldValue}}' placeholder-class='{{fillTipList[item.fieldKey]}}' value="{{conut}}"></input>
+                  </block>
+                  <block wx:else>
+                    <input class="jine" id='{{item.fieldKey}}' disabled="{{disabled}}" type="digit" name='{{item.fieldKey}}' maxlength='{{50}}' placeholder='请输入您的{{item.fieldValue}}' placeholder-class='{{fillTipList[item.fieldKey]}}'></input>
+                  </block>
+                  <view class="unit">
+                    {{item.fieldUnit}}
+                  </view>
+                </block>
+                <block wx:else>
+                  <input id='{{item.fieldKey}}' disabled="{{disabled}}" type="digit" name='{{item.fieldKey}}' maxlength='{{50}}' placeholder='请输入您的{{item.fieldValue}}' placeholder-class='{{fillTipList[item.fieldKey]}}'></input>
+                </block>
+              </block>
+              <block wx:elif="{{item.fieldValue === '申请人'}}">
+                <input id='{{item.fieldKey}}' disabled="{{disabled}}" name='{{item.fieldKey}}' maxlength='{{50}}' placeholder='请输入您的{{item.fieldValue}}' placeholder-class='{{fillTipList[item.fieldKey]}}' value="{{userName}}"></input>
+              </block>
+              <block wx:else>
+                <input id='{{item.fieldKey}}' disabled="{{disabled}}" name='{{item.fieldKey}}' maxlength='{{50}}' placeholder='请输入您的{{item.fieldValue}}' placeholder-class='{{fillTipList[item.fieldKey]}}'></input>
+              </block>
+            </view>
+          </view>
+          <!-- 金额 -->
+          <view class='row' wx:if='{{item.inputType == "money"}}'>
+            <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            <view class='main'>
+              <input value="{{money}}" id='{{item.fieldKey}}' disabled="{{disabled}}" type="digit" name='{{item.fieldKey}}' maxlength='{{50}}' placeholder='请输入您的{{item.fieldValue}}' placeholder-class='{{fillTipList[item.fieldKey]}}'></input>
+            </view>
+            <view class="unit">
+              {{item.fieldUnit}}
+            </view>
+          </view>
+          <!-- 下拉输入框  -->
+          <view class='row' wx:if='{{item.inputType == "select"}}'>
+            <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            <view class='main'>
+              <picker bindchange="bindPickerChange" id='{{item.fieldKey}}' value="{{myPickers[item.fieldKey]}}" range-key='name' range="{{item.selectList}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view id='{{item.fieldKey}}' class="type-label {{item.fillTip?fillTip:''}}">{{item.selectList[myPickers[item.fieldKey]].name}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <!-- 日期输入框  -->
+          <view class='row' wx:if='{{item.inputType == "date"}}'>
+            <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            <view class='main'>
+              <block wx:if="{{item.fieldAttribute === 'yyyy-MM-dd-d'}}">
+                <picker id='{{item.fieldKey}}.{{item.fieldAttribute}}' mode="multiSelector" value="{{datePicker[item.fieldKey].dateVaule}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{datePicker[item.fieldKey].dateArr}}">
+                  <div class="picker">
+                    <view class="fb-type">
+                      <view id='{{item.fieldKey}}' class="type-label {{item.fillTip?fillTip:''}}">{{datePicker[item.fieldKey].date}}</view>
+                    </view>
+                  </div>
+                </picker>
+              </block>
+              <block wx:elif="{{item.fieldAttribute === 'yyyy-MM-dd'}}">
+                <picker bindchange="bindDateChange" id='{{item.fieldKey}}' mode="date" value="{{myPickers[item.fieldKey]}}">
+                  <view class="picker">
+                    <view class="fb-type">
+                      <view id='{{item.fieldKey}}' class="type-label {{item.fillTip?fillTip:''}}">{{myPickers[item.fieldKey]}}</view>
+                    </view>
+                  </view>
+                </picker>
+              </block>
+              <block wx:else>
+                <picker id="{{item.fieldKey}}.{{item.fieldAttribute}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" mode="multiSelector" value="{{datePicker[item.fieldKey].dateVaule}}" range="{{datePicker[item.fieldKey].dateArr}}">
+                  <view class="picker">
+                    <view class="fb-type">
+                      <view id='{{item.fieldKey}}' class="type-label {{item.fillTip?fillTip:''}}">{{datePicker[item.fieldKey].date}}</view>
+                    </view>
+                  </view>
+                </picker>
+              </block>
+            </view>
+          </view>
+          <!-- 复选框  -->
+          <view class="row" wx:if='{{item.inputType == "checkBox"}}'>
+            <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            <view class="main" id='{{item.fieldKey}}' bindtap="showModal">
+              <block wx:if="{{checkedList[item.fieldKey] != ''}}">
+                <text decode="{{true}}" class="typeContent">
+							{{checkedList[item.fieldKey]}}
+						</text>
+              </block>
+              <block wx:else>
+                <text>
+							请选择{{item.fieldValue}}
+						</text>
+              </block>
+            </view>
+          </view>
+          <!-- 省市区框  -->
+          <view class="row" wx:if='{{item.inputType == "area"}}'>
+            <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            <view class="main">
+              <picker id='{{item.fieldKey}}' mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArrayList[item.index-1]}}">
+                <div class="picker">
+                  <view class="fb-type">
+                    <block wx:if="{{areaList[item.fieldKey] != ''}}">
+                      <view id='{{item.fieldKey}}' class="type-label {{item.fillTip?fillTip:''}}">{{areaList[item.fieldKey]}}</view>
+                    </block>
+                    <block wx:else>
+                      <view id='{{item.fieldKey}}' class="type-label {{item.fillTip?fillTip:''}}" style="color: #666;">
+                        请选择{{item.fieldValue}}
+                      </view>
+                    </block>
+                  </view>
+                </div>
+              </picker>
+            </view>
+          </view>
+          <!-- 单选框 -->
+          <view class='row' wx:if='{{item.inputType == "radio"}}'>
+            <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            <view class='main'>
+              <radio-group class="radio-group" bindchange="radioChange" id='{{item.fieldKey}}'>
+                <label class="radio" wx:for="{{item.selectList}}" wx:key=''>
+                  <radio color='rgba(43, 142, 200, 1)' value="{{item.name}}.{{item.id}}" checked="" />
+                  <!-- <view class="checkRadio"></view> -->
+                  {{item.name}}
+                </label>
+              </radio-group>
+            </view>
+          </view>
+          <!-- 文本域 textarea -->
+          <view class='row active' wx:if='{{item.inputType == "textarea"}}'>
+            <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            <view class='main'>
+              <block wx:if="{{showTextarea[item.fieldKey]}}">
+                <view class="textarea" id='{{item.fieldKey}}' bindtap='showTextarea'>
+                  <block wx:if="{{textValue[item.fieldKey]}}">
+                    {{textValue[item.fieldKey]}}
+                  </block>
+                  <block wx:else>
+                    <span>请输入您的{{item.fieldValue}}</span>
+                  </block>
+                </view>
+              </block>
+              <block wx:if="{{!showTextarea[item.fieldKey]}}">
+                <textarea bindblur='focusblur' id='{{item.fieldKey}}' focus='{{isFocus}}' disabled="{{disabled}}" name='{{item.fieldKey}}' placeholder-class='{{fillTipList[item.fieldKey]}}' maxlength="-1" placeholder='请输入您的{{item.fieldValue}}' value="{{textValue[item.fieldKey]}}"></textarea>
+              </block>
+            </view>
+          </view>
+          <!--文件类型-->
+          <view class='row upload' wx:if='{{item.inputType == "upload"}}'>
+            <block wx:if="{{title === '报销申请'}}">
+              <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}
+                <span>(只能识别火车票和增值税电子发票且识别的图片需正向)</span>
+              </view>
+            </block>
+            <block wx:else>
+              <view class='label {{item.isSure ? "mustFill" : ""}}'>{{item.fieldValue}}</view>
+            </block>
+            <view class='main clear'>
+              <view class='images uploadBtn {{fillTipList[item.fieldKey]}}'>
+                <icon bindtap='upload' data-field='{{item.fieldKey}}' class='iconfont icon-fujian'></icon>
+              </view>
+              <block wx:if="{{title === '报销申请'}}">
+                <view class='images' wx:for='{{conutList[item.fieldKey]}}' wx:for-item='file' wx:key='myindex'>
+                  <view class="deleteImage" data-data='{{item.fieldKey}}' data-src='{{file.src}}' bindtap='deleteImage'>
+                    <image class="" src="/img/cansel.png"></image>
+                  </view>
+                  <image src='{{file.src}}' data-src='{{file.src}}' data-field='{{item.fieldKey}}' bindtap='previewImage'></image>
+                  <block wx:if="{{file.count === 0}}">
+                    <span>识别失败</span>
+                  </block>
+                  <block wx:else>
+                    <span>{{file.count}}</span>
+                  </block>
+                </view>
+              </block>
+              <block wx:else>
+                <view class='images' wx:for='{{fileList[item.fieldKey]}}' wx:for-item='file' wx:key='myindex'>
+                  <view class="deleteImage" data-data='{{item.fieldKey}}' data-src='{{file}}' bindtap='deleteImage'>
+                    <image class="" src="/img/cansel.png"></image>
+                  </view>
+                  <image src='{{file}}' data-src='{{file}}' data-field='{{item.fieldKey}}' bindtap='previewImage'></image>
+                </view>
+              </block>
+            </view>
+          </view>
+          <!-- 抄送 -->
+          <view class='contact' wx:if='{{item.inputType == "contact"}}'>
+            <view class='label'>{{item.fieldValue}}</view>
+            <view class='main clear'>
+              <block wx:for="{{contactList}}" wx:for-item='file' wx:key='myindex'>
+                <view class='images'>
+                  <view class="deleteImage" data-id='{{file.id}}' bindtap='deleteContact'>
+                    <image class="" src="/img/cansel.png"></image>
+                  </view>
+                  <image src='{{file.src}}'></image>
+                  <view class="name">
+                    {{file.name}}
+                  </view>
+                </view>
+              </block>
+              <view class='images addBtn {{fillTipList[item.fieldKey]}}'>
+                <image src='/img/add.png' bindtap='goContacts'></image>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="button-box">
+        <button class='submitBtn' formType="submit">立即申请</button>
+      </view>
+    </form>
+  </view>
+
+  <!-- 模态框 -->
+
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}">
+
+  </view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="butt" bindtap='gocansel'>取消</view>
+    <view class="butt" bindtap='getValue'>确定</view>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for='{{check}}' wx:for-item='list' wx:key>
+        <checkbox value="{{list.name}}.{{list.id}}" checked="{{list.checked}}" /> {{list.name}}
+      </label>
+    </checkbox-group>
+  </view>
+</view>

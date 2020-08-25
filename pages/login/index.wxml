@@ -1,0 +1,37 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <!-- <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon> -->
+  </view>
+</view>
+<view class='logo'>
+  <image src='../../img/jrzh.png'></image>
+</view>
+<view class='title'>精锐纵横</view>
+<form bindsubmit='doLogin'>
+	<view class='content'>
+	  <block wx:if="{{isFist}}">
+			<view class='row'>
+				<view class='label'>帐号</view>
+				<input name='loginName' type='text' placeholder='请输入账号' value="{{userName}}"></input>
+			</view>
+			<view class='row'>
+				<view class='label'>密码</view>
+				<input name='loginPass' type='password' placeholder='请输入密码' value='{{userPassword}}'></input>
+			</view>
+		</block>
+		<block wx:if='{{isFist === false}}'>
+			<view class="cont text">
+				当前登录用户：{{userName}}
+			</view>
+		</block>
+	</view>
+	<block>
+		<button class='login' formType="submit">登录</button>
+	</block>
+</form>
+<block wx:if='{{isFist === false}}'>
+	<view class="passLogin" bindtap='goPassLogin'>
+		切换账户
+	</view>
+</block>

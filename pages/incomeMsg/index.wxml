@@ -1,0 +1,112 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view>
+    <view class='topInfo'>
+      <view class='logo'>
+        <icon class='iconfont {{foreclosureIco}}'></icon>
+      </view>
+      <view class='text'>
+        <view class='name'>姓名：{{foreclosureName}}</view>
+        <view class='time'>手机：{{foreclosurePhone}}</view>
+      </view>
+      <view class='state'>{{foreclosureBus}}</view>
+    </view>
+    <view class='flow'>
+      <view class='row title'>
+        <view class='part '>所处流程</view>
+        <view class='part '>审批意见</view>
+        <view class='part '>审批时间</view>
+      </view>
+      <block wx:for='{{foreclosureList}}' wx:key=''>
+        <view class='row {{item.active == 1 ? "active": ""}}'>
+          <view class='part name'>{{item.name}}</view>
+          <view class='part state'>{{item.state}}</view>
+          <view class='part time'>{{item.time}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view wx:if='{{business == 2}}'>
+    <view class='topInfo'>
+      <view class='logo'>
+        <icon class='iconfont {{redeemIco}}'></icon>
+      </view>
+      <view class='text'>
+        <view class='name'>姓名：{{redeemName}}</view>
+        <view class='time'>手机：{{redeemPhone}}</view>
+      </view>
+      <view class='state'>{{redeemBus}}</view>
+    </view>
+    <view class='flow'>
+      <view class='row title'>
+        <view class='part'>所处流程</view>
+        <view class='part'>审批意见</view>
+        <view class='part'>审批时间</view>
+      </view>
+      <block wx:for='{{redeemList}}' wx:key=''>
+        <view class='row {{item.active == 1 ? "active": ""}}'>
+          <view class='part name'>{{item.name}}</view>
+          <view class='part state'>{{item.state}}</view>
+          <view class='part time'>{{item.time}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view wx:if='{{business == 3}}'>
+    <view class='topInfo'>
+      <view class='logo'>
+        <icon class='iconfont {{payIco}}'></icon>
+      </view>
+      <view class='text'>
+        <view class='name'>姓名：{{payName}}</view>
+        <view class='time'>手机：{{payPhone}}</view>
+      </view>
+      <view class='state'>{{payBus}}</view>
+    </view>
+    <view class='flow'>
+      <view class='row title'>
+        <view class='part'>所处流程</view>
+        <view class='part'>审批意见</view>
+        <view class='part'>审批时间</view>
+      </view>
+      <block wx:for='{{payList}}' wx:key=''>
+        <view class='row {{item.active == 1 ? "active": ""}}'>
+          <view class='part name'>{{item.name}}</view>
+          <view class='part state'>{{item.state}}</view>
+          <view class='part time'>{{item.time}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view wx:if='{{business == 4}}'>
+    <view class='topInfo'>
+      <view class='logo'>
+        <icon class='iconfont {{loanIco}}'></icon>
+      </view>
+      <view class='text'>
+        <view class='name'>姓名：{{loanName}}</view>
+        <view class='time'>手机：{{loanPhone}}</view>
+      </view>
+      <view class='state'>{{loanBus}}</view>
+    </view>
+    <view class='flow'>
+      <view class='row title'>
+        <view class='part'>所处流程</view>
+        <view class='part'>审批意见</view>
+        <view class='part'>审批时间</view>
+      </view>
+      <block wx:for='{{loanList}}' wx:key=''>
+        <view class='row {{item.active == 1 ? "active": ""}}'>
+          <view class='part name'>{{item.name}}</view>
+          <view class='part state'>{{item.state}}</view>
+          <view class='part time'>{{item.time}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,149 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title' data-bustype='{{business}}'>
+    {{business}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='stepBody clear'>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round left'></view>
+        <view class='round right'></view>
+      </view>
+    </view>
+  </view>
+  <view class='bodyTitle'>交易信息</view>
+  <view class='title' style='margin: 0;'>买卖信息</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>成交价格</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>订 金</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>监管金额</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>监管银行</view>
+      <view class='main'>
+        <input placeholder='具体到支行'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>贷款承诺书金额</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>物业（1）信息</view>
+  <view class='mainBody'>
+    <view class='row'>
+      <view class='label mustFill'>物业类型</view>
+      <view class='main'>
+        <input placeholder='如：普通住宅'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>物业地址</view>
+      <view class='main'>
+        <input placeholder='请输入物业地址'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>详细地址</view>
+      <view class='main'>
+        <input placeholder='请输入详细地址'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>房产证号</view>
+      <view class='main'>
+        <input placeholder='房产证号或不动产证明'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>购房时间</view>
+      <view class='main'>
+        <input placeholder='输入详细时间具体到日'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>产权状态</view>
+      <view class='main'>
+        <input placeholder='输入产权状态'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>是否查封</view>
+      <view class='main'>
+        <input placeholder=''></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>建筑面积</view>
+      <view class='main'>
+        <input placeholder='（单位/平方米）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>登记价格</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>评估公司</view>
+      <view class='main'>
+        <input placeholder='请输入评估公司'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>评估总值</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>免税资格</view>
+      <view class='main'>
+        <input placeholder='输入免税资格'></input>
+      </view>
+    </view>
+  </view>
+  <view class='btn clear'>
+    <button class='backBtn' bindtap='navBack' data-businessType='{{business}}'>上一页</button>
+    <button class='nextBtn' bindtap='goNext' data-businessType='{{business}}'>下一页</button>
+  </view>
+</view>

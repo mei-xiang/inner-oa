@@ -1,0 +1,101 @@
+<view class="shade" wx:if="{{isSelectWorker}}" bindtap="closeShade"></view>
+<view class='nav bg-main' style='height:{{navH}}rpx'>
+    <view class='nav-title'>
+        {{title}}
+        <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+    </view>
+</view>
+<view class="report-search" style="margin-top:{{navH}}rpx">
+    <view style="color:black;font-size:30rpx;">选择时间区间：</view>
+    <view>
+        <picker mode="date" value="{{startTime}}" start="2019-01-01" end="2025-12-30" bindchange="bindStartDateChange">
+            <view wx:if="{{startTime != ''}}" style="margin-top:4rpx;">
+                {{startTime}}
+                <text>-</text>
+            </view>
+            <view wx:else style="margin-top:4rpx;">
+                起始时间
+                <text style="margin-left:20rpx;">-</text>
+            </view>
+        </picker>
+    </view>
+    <view>
+        <picker mode="date" value="{{endTime}}" start="2019-01-01" end="2025-12-30" bindchange="bindEndDateChange">
+            <view wx:if="{{endTime != ''}}" style="margin-left:20rpx;margin-top:4rpx;">
+                {{endTime}}
+            </view>
+            <view wx:else style="margin-left:20rpx;margin-top:4rpx;">结束时间</view>
+        </picker>
+    </view>
+</view>
+<view class="line"></view>
+<view class="report-search" bindtap="selectWoker">
+    <text class="select-worker-title">选择员工：</text>
+    <view class="select-worker-list">
+        <block wx:for="{{selectWorkerList}}">{{item}}<text wx:if="{{index != selectWorkerList.length -1}}">、</text></block>
+    </view>
+</view>
+<!-- 选择员工列表，可多选 -->
+<view class="select-person-list" wx:if="{{isSelectWorker}}">
+    <view class="list-confirm">
+        <view class="confirm-cancel" bindtap="bindSelectALl">{{selectAll ? '全选':'全不选'}}</view>
+        <view class="confirm-ensure" bindtap="bindEnsure">确定</view>
+    </view>
+    <view class="person-list">
+        <block wx:for="{{workerList}}">
+            <view class="list-con" bindtap="bindSelectWorker" data-wid="{{item.id}}">
+                <view class="list-item">
+                    <text class="item-name">{{item.name}}</text>
+                    <image src="../../img/select.png" class="select-img" wx:if="{{item.isSelect}}" />
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+<view class="line"></view>
+<view class="navbar">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar" style="top:{{navH + 188}}rpx">
+                <view wx:for="{{tabs}}" wx:key="*this" id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                    <view class="weui-navbar__type" style="color:{{activeIndex == index ? '#2B8EC8':'grey'}}">
+                        {{item}}
+                    </view>
+                </view>
+            </view>
+            <view class="weui-navbar__slider" style="top:{{navH + 280}}rpx;left: {{sliderLeft}}; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            <view class="weui-tab__panel" style="top:{{navH + 284}}rpx;">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}" style="height:{{scrollHeight - navH/2 - 142}}px;">
+                    <block wx:for="{{leaveList}}">
+                        <view class="report-item-con">
+                            <view class="con-det">
+                                <image src="../../img/person.png" class="det-img" />
+                                <view class="det-info">
+                                    <view class="info-name">{{item.name}}</view>
+                                    <view class="info-message">{{item.task}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="line"></view>
+                    </block>
+                      <view style="height:100rpx"></view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}" style="height:{{scrollHeight - navH/2 - 142}}px;">
+                    <block wx:for="{{baoxiaoList}}">
+                        <view class="report-item-con">
+                            <view class="con-det">
+                                <image src="../../img/person.png" class="det-img" />
+                                <view class="det-info">
+                                    <view class="info-name">{{item.name}}</view>
+                                    <view class="info-message">{{item.task}}</view>
+                                </view>
+                            </view>
+                        </view>
+                         <view class="line"></view>
+                    </block>
+                    <view style="height:100rpx"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

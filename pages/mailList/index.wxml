@@ -1,0 +1,8 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <!-- <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon> -->
+  </view>
+</view>
+
+

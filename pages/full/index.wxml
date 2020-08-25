@@ -1,0 +1,196 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title' data-bustype='{{business}}'>
+    ({{business}})已办
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='stepBody clear'>
+    <view class='item'>
+      <view class='con'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round left'></view>
+        <view class='round right'></view>
+      </view>
+    </view>
+  </view>
+  <view class='bodyTitle'>借款人（卖方）信息</view>
+  <view class='title' style='margin: 0;'>借款信息</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>申请编号</view>
+      <view class='main'>
+        <input placeholder='输入申请编号'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>申请时间</view>
+      <view class='main'>
+        <picker bindchange="bindDateChange" mode="date" value="{{date}}">
+          <view class="picker">
+            <view class="fb-type">
+              <view class="type-label">{{date}}</view>
+            </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>借款金额</view>
+      <view class='main'>
+        <input placeholder='输入借款金额（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>借款期限</view>
+      <view class='main'>
+        <input placeholder='输入借款期限（单位/天）'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>卖方信息</view>
+  <view class='mainBody'>
+    <view class='row'>
+      <view class='label mustFill'>卖方名称</view>
+      <view class='main'>
+        阿兰德龙
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>手机号码</view>
+      <view class='main'>
+        123498236120
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>证件类型</view>
+      <view class='main'>
+        身份证
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>证件号码</view>
+      <view class='main'>
+        4290061997092578963
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label'>性别</view>
+      <view class='main'>
+        男
+      </view>
+    </view>
+     <view class='row'>
+      <view class='label'>年龄</view>
+      <view class='main'>
+        24
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>婚姻情况</view>
+      <view class='main'>
+        未婚
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>文化程度</view>
+      <view class='main'>
+        本科
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>现居地址</view>
+      <view class='main'>
+        深圳 福田区
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>详细地址</view>
+      <view class='main'>
+        车公庙 纯K
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>房贷</view>
+      <view class='main'>
+        100000.00
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>对外担保</view>
+      <view class='main'>
+        100000.00
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>信用卡总额度</view>
+      <view class='main'>
+        100000.00
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>近半年使用额度</view>
+      <view class='main'>
+        100000.00
+      </view>
+    </view>
+  </view>
+  <view class='title'>卖方资料</view>
+  <view class='mainBody'>
+    <view class='row'>
+      <view class='label '>房产（1）</view>
+      <view class='main'>
+        <button class='add'>增加信息</button>
+        <button class='delete'>删除信息</button>
+        <button class='check'>查看信息</button>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label '>房产（2）</view>
+      <view class='main'>
+        <button class='add'>增加信息</button>
+        <button class='delete'>删除信息</button>
+        <button class='check'>查看信息</button>
+      </view>
+    </view>
+  </view>
+  <view class='title'>担保人信息</view>
+  <view class='mainBody'>
+    <view class='row'>
+      <view class='label '>信息（1）</view>
+      <view class='main'>
+        <button class='add'>增加信息</button>
+        <button class='delete'>删除信息</button>
+        <button class='check'>查看信息</button>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label '>信息（2）</view>
+      <view class='main'>
+        <button class='add'>增加信息</button>
+        <button class='delete'>删除信息</button>
+        <button class='check'>查看信息</button>
+      </view>
+    </view>
+  </view>
+  <button class='submitBtn' bindtap='goNext' data-businessType='{{business}}'>下一页</button>
+</view>

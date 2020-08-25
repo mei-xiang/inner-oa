@@ -1,0 +1,123 @@
+<view class='toast-box' hidden='{{!ifShow}}'>
+  <view class='toastbg'></view>
+  <view class='btnBody'>
+    <view class='text'>{{content}}</view>
+    <view class='model' bindtap='hideBody'>取消</view>
+  </view>
+</view>
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='upper'>
+  	<view class='title'>
+		  <text>{{inputTitle}}</text>
+		  <button class="reback-btn" bindtap="rebackFLow" wx:if="{{canReback}}">撤回申请</button>
+		  <button wx:if="{{hasReback}}" class="is-reback">已撤回</button>
+	</view>
+	  <block wx:for='{{modules}}' wx:for-item='module' wx:key='' wx:for-index="bindex">
+	  	<view class='bodyTitle'>{{module.name}}</view>
+	  	<block wx:for='{{module.fieldList}}' wx:for-item='item' wx:key='' wx:for-index="bindex-two">
+	    <!-- 普通输入框  -->
+	  	<view class='row' wx:if='{{item.inputType == "text"}}'>
+		    <view class='label '>{{item.fieldValue}}</view>
+		    <view class='main'>
+		    	{{item.fieldContent}}
+		    </view>
+		  </view>
+		  <!-- 下拉输入框  -->
+	  	<view class='row' wx:if='{{item.inputType == "select"}}'>
+		    <view class='label '>{{item.fieldValue}}</view>
+		    <view class='main'>
+		    	{{item.fieldContent}}
+		    </view>
+		  </view>
+		  <!-- 日期输入框  -->
+		  <view class='row' wx:if='{{item.inputType == "date"}}'>
+		    <view class='label '>{{item.fieldValue}}</view>
+		    <view class='main'>
+		    	{{item.fieldContent}}
+		    </view>
+		  </view>
+			<!-- 单选框  -->
+			<view class='row' wx:if='{{item.inputType == "radio"}}'>
+		    <view class='label '>{{item.fieldValue}}</view>
+		    <view class='main'>
+		    	{{item.fieldContent}}
+		    </view>
+			</view>
+			<!-- 复选框  -->
+			<view class='row' wx:if='{{item.inputType == "checkBox"}}'>
+		    <view class='label '>{{item.fieldValue}}</view>
+		    <view class='main'>
+		    	{{item.fieldContent}}
+		    </view>
+			</view>
+			<!-- 省市区 -->
+			<view class='row' wx:if='{{item.inputType == "area"}}'>
+		    <view class='label '>{{item.fieldValue}}</view>
+		    <view class='main'>
+		    	{{item.fieldContent}}
+		    </view>
+		  </view>
+		  <!-- 文本域 textarea -->
+		  <view class='row active' wx:if='{{item.inputType == "textarea"}}'>
+		    <view class='label '>{{item.fieldValue}}
+					<view class="content-text">
+							{{item.fieldContent}}
+					</view>
+				</view>
+			</view>
+			<!--文件类型-->
+			<!-- style="display: {{item.isShow ? 'block' : 'none'}};"  -->
+			<view class='row upload' wx:if='{{item.inputType == "upload"}}'>
+				<view class='label'>{{item.fieldValue}}</view>
+				<view class='main clear'>
+					<block wx:for="{{imgUrl}}" wx:for-item='item1' wx:key="">
+							<image class="images" src="{{item1.url}}" data-src="{{item1.url}}{{item1.index}}" bindtap="goPreviewImage"></image>
+					</block>
+				</view>
+			</view>
+		  </block>
+	  </block>
+	</view>
+</view>
+<view class='lower'>
+	<view class='flow'>审批流程</view>
+	<view class="listview-container">
+	  <block wx:for="{{histories}}" wx:key="">
+	    <view class="playlog-item" bindtap="">
+	      <view class="dotline">
+	        <!-- 竖线 -->
+	        <view class="line"></view>
+	        <!-- 圆点 -->
+	        <view class="dot"></view>
+	        <!-- 时间戳 -->
+	      </view>
+	      <view class="textContent">
+	        <view class="course">{{item.name}}({{item.createBy}})
+	        	<view wx-if="{{item.time}}" class="time">{{item.time}}</view>
+	        </view>
+	        <view wx-if="{{item.options}}" class="option">“{{item.options}}”</view>
+	      </view>
+	    </view>
+	  </block>
+	</view>
+	<!--<view class='flow'>
+      <view class='row title'>
+      	<view class='part '>审批时间</view>
+        <view class='part '>所处流程</view>
+        <view class='part '>审批意见</view>
+      </view>
+      <block wx:for='{{histories}}' wx:key=''>
+        <view class='row {{item.active == 1 ? "active": ""}} clear'>
+          <view class='part name'>{{item.time}}</view>
+          <view class='part time'>{{item.name}}</view>
+          <view bindtap='showMsg' class='part state' id='{{item.id}}'>查看</view>
+        </view>
+      </block>
+    </view>-->
+</view>

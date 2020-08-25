@@ -1,0 +1,153 @@
+page {
+    background: #F0F4F7;
+}
+
+.mid {
+    margin-top: 40rpx;
+    box-sizing: border-box;
+    width: 100%;
+    background: #FFf;
+    padding-left: 32rpx;
+    border-bottom: 2rpx solid #F2F2F2;
+    border-top: 2rpx solid #F2F2F2;
+}
+
+.mid .row {
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid #F2F2F2;
+    height: 88rpx;
+    position: relative;
+    line-height: 88rpx;
+    color: #000;
+    font-size: 28rpx;
+    font-weight: 500;
+}
+
+.mid .row:last-child {
+    border-bottom: none;
+}
+
+.mid .row icon {
+    font-size: 32rpx;
+    color: #2B8EC8;
+    margin-right: 16rpx;
+}
+
+.mid .row .icon-details {
+    font-size: 48rpx;
+    color: #ABABAB;
+    float: right;
+}
+
+.business-input {
+    border-top: #ececec solid 2rpx;
+    background: white;
+}
+
+.business-input-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 32rpx;
+    height: 88rpx;
+    border-bottom: #f5f5f5 solid 2rpx;
+}
+
+.business-input-title {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #112540;
+    flex: 1;
+}
+
+.business-input-det {
+    flex: 4;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #112540;
+    display: flex;
+}
+
+.business-input-det-product {
+    flex: 4;
+    font-size: 28rpx;
+    color: #112540;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.business-input-det-rightImg {
+    width: 16rpx;
+    height: 24rpx;
+    margin-right: 32rpx;
+}
+
+.business-input-det .bussiness-input-det-sex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.business-input-det .bussiness-input-det-sex .sex-text {
+    font-size: 28rpx;
+    margin-left: 8rpx;
+}
+
+.business-input-det image {
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.business-input-det input {
+    line-height: 28rpx;
+    font-size: 28rpx;
+    width: 90%;
+}
+
+.business-input-det textarea {
+    width: 100%;
+}
+
+.business-input-list-textarea {
+    display: flex;
+    flex-direction: row;
+    height: 350rpx;
+    margin-left: 32rpx;
+    margin-top: 30rpx;
+}
+
+.business-input-det .business-input-textarea {
+    width: 100%;
+    height: 74rpx !important;
+}
+
+.form-btn {
+    margin: 78rpx 78rpx;
+    height: 96rpx;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00a2e9;
+    color: #ffffff;
+}
+
+.radio-style {
+    display: flex;
+    align-items: center;
+}
+
+.row-style {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.line {
+    height: 2rpx;
+    width: 100%;
+    background: #f5f5f5;
+}

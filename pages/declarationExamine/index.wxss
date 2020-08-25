@@ -1,0 +1,152 @@
+page {
+  background: #F0F4F7;
+}
+
+.content {
+  margin-top: 130rpx;
+  box-sizing: border-box;
+}
+
+.topnav {
+  box-sizing: border-box;
+  height: 200rpx;
+  background: #FFF;
+}
+
+.topnav .model {
+  box-sizing: border-box;
+  float: left;
+  width: 33%;
+  height: 100%;
+  position: relative;
+  background: #FFF;
+}
+
+.topnav .model:nth-child(4n) {
+  border-right: none;
+}
+
+.topnav .model .con {
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.topnav .model .con icon {
+  font-size: 50rpx;
+}
+
+.topnav .model .con .name {
+  color: #101010;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+
+.information {
+  margin-top: 10px;
+  box-sizing: border-box;
+  background: #FFF;
+}
+
+.information .title {
+  width: 100%;
+  height: 80rpx;
+  padding: 0 32rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #F2F2F2;
+  font-size: 30rpx;
+  color: #101010;
+}
+
+.information .con {
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  padding-left: 20rp;
+}
+
+.information .con .row {
+  box-sizing: border-box;
+  position: relative;
+  height: 160rpx;
+  border-bottom: 1px solid #F2F2F2;
+}
+
+.information .con .row .logo {
+  box-sizing: border-box;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.information .con .row .logo icon {
+  font-size: 60rpx;
+  color: #2b8ec8;
+}
+
+.information .con .row .state {
+  box-sizing: border-box;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  color: #bbbbbb;
+  font-size: 40rpx;
+}
+
+.information .con .row .tip {
+  box-sizing: border-box;
+  width: max-content;
+  position: absolute;
+  top: 56%;
+  right: 82rpx;
+  transform: translateY(-50%);
+}
+
+.information .con .row .tip image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.information .con .row .text {
+  padding: 40rpx 120rpx 0 70rpx;
+}
+
+.information .con .row .text .name {
+  font-size: 28rpx;
+  color: #101010;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.information .con .row .text .time {
+  margin-top: 9rpx;
+  font-size: 24rpx;
+  color: #ABABAB;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.num {
+  position: absolute;
+  right: 86rpx;
+  top: 40rpx;
+  width: 28rpx;
+  height: 28rpx;
+  background: #F43530;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  z-index: 11;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  padding: 0;
+  margin: 0;
+}

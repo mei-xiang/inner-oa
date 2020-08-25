@@ -1,0 +1,115 @@
+<!--pages/backTrackingHours/index.wxml-->
+<view class='page'>
+  <view class='nav bg-main' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      工时补录
+      <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+    </view>
+  </view>
+  <view style="height:{{navH}}px"></view>
+  <view class="main">
+    <view class='item'>
+      <view class="lt">
+          补录时间
+        <text style="color:red">*</text>
+      </view>
+      <view class="rt">
+        <picker  start="2000-01-01" end="2099-12-31" bindchange="bindDateChange" mode ='date'>
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='item'>
+      <view class="lt">
+        上午项目
+      </view>
+      <view class="rt">
+        <picker bindchange="bindMornChange" value="{{mornIndex}}" range="{{projectArray}}">
+          <view class="picker">
+            {{projectArray[mornIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='item'>
+      <view class="lt">
+        上午模块
+      </view>
+      <view class="rt">
+        <picker bindchange="bindModularChange" value="{{foreModular}}" range="{{foreModularArray}}">
+          <view class="picker">
+            {{foreModularArray[foreModular]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='remark'>
+      <view class="remark_title">上午备注</view>
+      <view class="remark_content">
+        <!-- <textarea id="morning" placeholder="请输入备注" bindinput="bindInp" /> -->
+        <view class="text_area" bindtap="showTextareaMorning" wx:if="{{textFore === false}}">
+          <span>{{morningVal == '' ? '请输入备注' : morningVal}}</span>
+        </view>
+        <view wx:else>
+          <textarea id="morning" placeholder="请输入备注" bindblur="focusblurMorning" focus='{{isFocusFore}}' bindinput="bindInpMorning" value="{{morningVal}}"></textarea>
+        </view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class="lt">
+        下午项目
+      </view>
+      <view class="rt">
+        <picker bindchange="bindAfterChange" value="{{afterIndex}}" range="{{projectArray}}">
+          <view class="picker">
+            {{projectArray[afterIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+        <view class='item'>
+      <view class="lt">
+        下午模块
+      </view>
+      <view class="rt">
+        <picker bindchange="bindAfterModularChange" value="{{afterModular}}" range="{{afterModularArray}}">
+          <view class="picker">
+            {{afterModularArray[afterModular]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='remark'>
+      <view class="remark_title">下午备注</view>
+      <view class="remark_content">
+        <!-- <textarea id="after" placeholder="请输入备注" bindinput="bindInp" /> -->
+        <view class="text_area" bindtap="showTextareaAfter" wx:if="{{textAfter === false}}">
+          <span>{{afterVal == '' ? '请输入备注' : afterVal}}</span>
+        </view>
+        <view wx:else>
+          <textarea id="morning" placeholder="请输入备注" bindblur="focusblurAfter" focus='{{isFocusAfter}}' bindinput="bindInpAfter" value="{{afterVal}}"></textarea>
+        </view>
+      </view>
+    </view>
+    <view class='remark'>
+      <view class="remark_title">
+      补录原因
+       <text style="color:red">*</text>
+      </view>
+      <view class="remark_content">
+        <!-- <textarea id="throughTheReason" placeholder="请输入补录原因" bindinput="bindInp" /> -->
+        <view class="text_area" bindtap="showTextarea" wx:if="{{textReason === false}}">
+          <span>{{throughTheReason == '' ? '请输入补录原因' : throughTheReason}}</span>
+        </view>
+        <view wx:else>
+          <textarea id="throughTheReason" placeholder="请输入补录原因" bindblur="focusblur" focus='{{isFocusReason}}' bindinput="bindInp" value="{{throughTheReason}}"></textarea>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <button  class="submit" bindtap='getSubmit' >立即提交</button>
+  </view>
+</view>

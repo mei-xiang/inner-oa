@@ -1,0 +1,233 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title' data-bustype='{{business}}'>
+    {{business}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='stepBody clear'>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round left'></view>
+        <view class='round right'></view>
+      </view>
+    </view>
+  </view>
+  <view class='bodyTitle'>项目信息</view>
+  <view class='title' style='margin: 0;'>借款信息</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>渠道类别</view>
+      <view class='main'>
+        <input placeholder='请输入借款渠道'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>渠道名称</view>
+      <view class='main'>
+        <input placeholder='输入渠道名称'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>渠道手机号</view>
+      <view class='main'>
+        <input placeholder='输入渠道手机号'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>返点说明</view>
+      <view class='main'>
+        <input placeholder='输入返点说明'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>返点账号</view>
+      <view class='main'>
+        <input placeholder='请输入返点账号'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>返点户名</view>
+      <view class='main'>
+        <input placeholder='请输入返点户名'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>返点开户行</view>
+      <view class='main'>
+        <input placeholder='请输入返点开户名'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>原贷款（1）信息</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>原贷款机构类型</view>
+      <view class='main'>
+        <input placeholder='请输入原贷款机构类型'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>原贷款产品</view>
+      <view class='main'>
+        <input placeholder='请输入原贷款产品'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>省份</view>
+      <view class='main'>
+        <input placeholder='输入原贷款所在省份'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>城市</view>
+      <view class='main'>
+        <input placeholder='输入原贷款所在城市'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>银行</view>
+      <view class='main'>
+        <input placeholder='输入银行名称'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>原贷款余额</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>原贷款机构联系人姓名</view>
+      <view class='main'>
+        <input placeholder='填写真实姓名'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>原贷款机构联系人电话</view>
+      <view class='main'>
+        <input placeholder='请输入联系电话'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>还款银行卡(1)信息</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>预计出款时间</view>
+      <view class='main'>
+        <input placeholder='输入时间具体到日'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>金额</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>账户人姓名</view>
+      <view class='main'>
+        <input placeholder='输入账户人姓名'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>帐号</view>
+      <view class='main'>
+        <input placeholder='输入银行卡账号'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>银行</view>
+      <view class='main'>
+        <input placeholder='输入银行名称'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>备注</view>
+      <view class='main'>
+        <input placeholder='填写相关备注'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>费用信息</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>申请出款金额</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>申请用款天数</view>
+      <view class='main'>
+        <input placeholder='填写用款天数如：30'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>申请用款利率</view>
+      <view class='main'>
+        <input placeholder='%'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>利息总收入</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>公司实收利率</view>
+      <view class='main'>
+        <input placeholder='%'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>公司实收利息</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>相关返点</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>前端收费金额</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>后端收费金额</view>
+      <view class='main'>
+        <input placeholder='（单位/元）'></input>
+      </view>
+    </view>
+  </view>
+  <view class='btn clear'>
+    <button class='backBtn' bindtap='navBack' data-businessType='{{business}}'>上一页</button>
+    <button class='nextBtn' bindtap='goNext' data-businessType='{{business}}'>下一页</button>
+  </view>
+</view>

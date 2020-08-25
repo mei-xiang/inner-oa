@@ -1,0 +1,70 @@
+/* pages/workingHours/index.wxss */
+.page{
+  width:100%;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page .main{
+  flex: 1;
+  box-sizing: border-box;
+  padding: 15rpx 32rpx;
+  overflow-y:scroll;
+}
+.page .main .item{
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 2rpx solid #F2F2F2;
+  display: flex;
+}
+.page .main .item .lt{
+  color: #101010;
+  width: 30%;
+  font-size:28rpx;
+  line-height: 88rpx;
+}
+.page .main .item .rt{
+  flex: 1;
+  position: relative;
+}
+.page .main .item .rt .picker{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 88rpx;
+}
+.page .main .remark{
+  width: 100%;
+  height: auto;
+  border-bottom: 2rpx solid #F2F2F2;
+}
+.page .main .remark .remark_title{
+  font-size:28rpx;
+  color: #101010;
+  line-height: 88rpx;
+  width: 30%;
+  height: 88rpx;
+}
+.page .main .remark .remark_content{
+  width: 100%;
+}
+.page .main .remark .remark_content textarea{
+  width: 100%;
+  height: 200rpx;
+  line-height: 30rpx;
+}
+.page .submit{
+  width:100%;
+  height:90rpx;
+  line-height:90rpx;
+  text-align: center;
+  background: rgba(43, 142, 200, 1);
+  color:#fff;
+  font-size:28rpx;
+}
+.data_content{
+  display: flex;
+  align-items: center;
+}

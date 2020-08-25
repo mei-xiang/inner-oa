@@ -1,0 +1,28 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <!-- <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon> -->
+  </view>
+</view>
+<view class='content'>
+  <view class='model' bindtap='goWorkingHours' id='workingHours'>
+    <view class='con'>
+      <icon class='iconfont icon-bigBuild' style='color: #2b8ec8;'></icon>
+      <view class='name'>工时填报</view>
+    </view>
+  </view>
+  <view class='model' bindtap='goBackTrackingHours' id='backTracking'>
+    <view class='con'>
+      <icon class='iconfont icon-bigBuild' style='color: #2b8ec8;'></icon>
+      <view class='name'>工时补录</view>
+    </view>
+  </view>
+  <block wx:for='{{functionList}}' wx:key=''>
+    <view class='model' bindtap='{{item.fn}}' id='{{item.id}}'>
+      <view class='con'>
+        <icon class='iconfont {{item.ico}}' style='color: {{item.color}};'></icon>
+        <view class='name'>{{item.name}}</view>
+      </view>
+    </view>
+  </block>
+</view>

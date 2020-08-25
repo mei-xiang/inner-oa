@@ -1,0 +1,35 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='topnav'>
+    <block wx:for='{{functionList}}' wx:key=''>
+      <view class='model' bindtap='{{item.fn}}'>
+        <view class='con'>
+          <icon class='iconfont {{item.ico}}' style='color: {{item.color}};'></icon>
+          <view class='name'>{{item.name}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='information'>
+    <view class='title'>进件消息</view>
+    <view class='con'>
+      <block wx:for='{{incomeList}}' wx:key=''>
+        <view class='row' bindtap='{{item.fn}}' data-businessType='{{item.typeNo}}'>
+          <view class='logo'>
+            <icon class='iconfont {{item.ico}}'></icon>
+          </view>
+          <view class='text'>
+            <view class='name'>{{item.name}}({{item.businessType}})</view>
+            <view class='time'>{{item.time}}</view>
+          </view>
+          <view class='state'>{{item.state}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

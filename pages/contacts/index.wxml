@@ -1,0 +1,17 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+  <view class='mid' style="margin-top:{{navH}}px">
+    <block wx:for="{{list}}" wx:key = ''>
+      <view class='row' data-name="{{item.name}}" data-id="{{item.id}}" data-src='{{item.src}}' bindtap="chooseContact">       
+        <image src='{{item.src}}'></image>
+        <view class="main">
+          <span>{{item.name}}({{item.roles}})</span>
+        </view>
+    </view>
+    </block>
+  </view>
+

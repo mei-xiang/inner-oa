@@ -1,0 +1,115 @@
+<!--pages/workingHours/index.wxml-->
+<view class='page'>
+  <view class='nav bg-main' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      工时提交
+      <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+    </view>
+  </view>
+  <view style="height:{{navH}}px"></view>
+  <view class="main">
+    <view class='item'>
+      <view class="lt">
+          时间
+        <text style="color:red">*</text>
+      </view>
+      <view class="data_content">
+        <text mode="date" >{{date}}</text>
+      </view>
+      <!--<view class="rt">
+        <picker  start="2000-01-01" end="2099-12-31" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>-->
+    </view>
+    <view class='item'>
+      <view class="lt">
+        上午项目
+      </view>
+      <view class="rt">
+        <picker bindchange="bindMornChange" value="{{mornIndex}}" range="{{projectArray}}">
+          <view class="picker">
+            {{projectArray[mornIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='item'>
+      <view class="lt">
+        上午模块
+      </view>
+      <view class="rt">
+        <picker bindchange="bindModularChange" value="{{foreModular}}" range="{{foreModularArray}}">
+          <view class="picker">
+            {{foreModularArray[foreModular]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='remark'>
+      <view class="remark_title">上午备注</view>
+      <view class="remark_content">
+        <textarea id="morning" placeholder="请输入备注" bindinput="bindInp" />
+      </view>
+    </view>
+    <view class='item'>
+      <view class="lt">
+        下午项目
+      </view>
+      <view class="rt">
+        <picker bindchange="bindAfterChange" value="{{afterIndex}}" range="{{projectArray}}">
+          <view class="picker">
+            {{projectArray[afterIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+        <view class='item'>
+      <view class="lt">
+        下午模块
+      </view>
+      <view class="rt">
+        <picker bindchange="bindAfterModularChange" value="{{afterModular}}" range="{{afterModularArray}}">
+          <view class="picker">
+            {{afterModularArray[afterModular]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='remark'>
+      <view class="remark_title">下午备注</view>
+      <view class="remark_content">
+        <textarea id="after" placeholder="请输入备注" bindinput="bindInp" />
+      </view>
+    </view>
+    <view class='tabs'>
+         <view class='tab'>
+                <block wx:for="{{['管理','项目','售前/市场']}}" wx:key="id">
+                        <view class="tab_item {{currentTabIndex ? 'select' : ''}}" bindtap='onTabItemTap' data-index ='{{index}}'>
+                        {{item}}
+                        </view>
+                </block>
+         </view>
+         <view class='item_detail'>
+              <view hidden='{{currentTabIndex != 0}}'>
+                <view class="rt">
+                  <picker bindchange="bindAfterChange" value="{{afterIndex}}" range="{{projectArray}}">
+                    <view class="picker">
+                      {{projectArray[afterIndex]}}
+                    </view>
+                  </picker>
+                </view>
+              </view>
+               <view hidden='{{currentTabIndex != 1}}'>
+              2
+              </view>
+               <view hidden='{{currentTabIndex != 2}}'>
+              3
+              </view>
+         </view>
+    </view>
+  </view>
+  <view class="submit" bindtap='getSubmit'>立即提交</view>
+</view>

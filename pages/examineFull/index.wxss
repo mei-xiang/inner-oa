@@ -1,0 +1,501 @@
+page{
+  background: #F0F4F7;
+}
+.content{
+  margin-top: 135rpx;
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+  padding-bottom: 20rpx;
+}
+.stepBody{
+  margin: 64rpx 80rpx 64rpx 64rpx;
+}
+.stepBody .item{
+  box-sizing: border-box;
+  float: left;
+  width: 20%;
+  height: 2rpx;
+}
+.stepBody .item .con{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.stepBody .item .con::after{
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rpx;
+  background: #BBBBBB;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.stepBody .item .con.active::after{
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rpx;
+  background: #2B8EC8;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.stepBody .item .con .round{
+  position: absolute;
+  width: 16rpx;
+  height: 16rpx;
+  border: 4rpx solid #BBBBBB;
+  background: #F0F4F7;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 888;
+}
+
+.stepBody .item .con .round.active{
+  border: 4rpx solid #2B8EC8;
+}
+
+.stepBody .item .con .round.left{
+  left: 0;
+}
+.stepBody .item .con .round.right{
+  right: -16rpx;
+}
+.bodyTitle{
+  box-sizing: border-box;
+  width: 100%;
+  height: 56rpx;
+  line-height: 56rpx;
+  background-color: rgba(43, 142, 200, 1);
+  color: #FFF;
+  font-size: 28rpx;
+  padding: 0 32rpx;
+}
+.title{
+  margin-top: 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background: #FFF;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding:0 32rpx;
+  font-size: 28rpx;
+  color: #101010;
+  border-bottom: 1px solid #F2F2F2; 
+}
+.mainBody{
+  box-sizing: border-box;
+  width: 100%;
+  background: #FFF;
+  padding:15rpx 32rpx;
+}
+.mainBody .row{
+  box-sizing: border-box;
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 2rpx solid #F2F2F2;
+  position: relative;
+  
+}
+.title-content{
+  line-height:80rpx;
+  font-size:30rpx;
+  color:#000;
+}
+.mainBody .area{
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  padding: 20rpx 0 0 0 ;
+}
+
+.mainBody .area button{
+  float: left;
+  width: 32%;
+  height: 60rpx;
+  border-radius: 4rpx;
+  background-color: rgba(68, 151, 193, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+  border: none;
+  margin-right: 2%;
+  margin-bottom: 20rpx;
+}
+.mainBody .area button:nth-child(3n){
+  margin-right: 0;
+}
+.mainBody .row.more{
+  height: 200rpx;
+}
+.mainBody .row .label{
+	display: inline-block;
+  box-sizing: border-box;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #808080;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.mainBody .row .label.mustFill::after{
+  content: '*';
+  display: inline-block;
+  margin-left: 8rpx;
+  color: red;
+}
+.mainBody .row .main{
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 30%;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #101010;
+}
+.mainBody .row .main .picker{
+  width: 100%;
+  height: 100%;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #101010;
+  position: relative;
+}
+.mainBody .row .main input{
+  width: 100%;
+  height: 100%;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #101010;
+  position: relative;
+}
+
+.mainBody .row .main picker{
+  width: 100%;
+  height: 88rpx;
+}
+.mainBody .row .main .picker{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #101010;
+  position: relative;
+}
+.mainBody .row .main .picker .fb-type{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.mainBody .row .main .picker .fb-type .type-label{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.mainBody .row.active{
+  height: auto;
+  padding-bottom: 20rpx;
+}
+
+.mainBody .row.active .main{
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.mainBody .row.active .main textarea{
+  width: 100%;
+  height: 200rpx;
+  
+}
+.text-content {
+  line-height:50rpx;
+  margin-top:-20rpx;
+
+}
+.mainBody .row .main .infoText{
+  width: 100%;
+  height: 100%;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #101010;
+  position: relative;
+  margin: 0;
+  text-align: left;
+}
+.mainBody .row .main button{
+  float: right;
+  box-sizing: border-box;
+  width: 30%;
+  height: 52rpx;
+  border-radius: 4rpx;
+  color: rgba(255, 255, 255, 1);
+  font-size: 22rpx;
+  margin: 14rpx 0 14rpx 3%;
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+}
+.mainBody .row .main button.check{
+  background: #5D5D5D;
+}
+.mainBody .row .main button.add{
+  background: #3AADFE;
+}
+.mainBody .row .main button.delete{
+  background: #C8342B;
+}
+.buttonBody
+{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	box-sizing: border-box;
+	height: 80rpx;
+	width: 100%;
+	background: #FFF;
+	z-index: 10;
+}
+.buttonBody .submitBtn{
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  height: 80rpx;
+  border-radius: 0;
+  background-color: rgba(43, 142, 200, 1);
+  color: #FFF;
+  font-size: 30rpx;
+  border: none;
+}
+.buttonBody .submitBtn.more{
+  background-color: #ABABAB;
+}
+.row.upload {
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.row.upload .label {
+	box-sizing: border-box;
+	width: 100%;
+	line-height: 88rpx;
+	font-size: 28rpx;
+	color: #808080;
+}
+
+.row.upload .main {
+	box-sizing: border-box;
+	position: unset;
+	width: 100%;
+	height: auto;
+	padding: 0;
+	padding-top: 20rpx;
+}
+
+.row.upload .main .images {
+	box-sizing: border-box;
+	float: left;
+	width: 100rpx;
+	height: 100rpx;
+	margin-right: 20rpx;
+	margin-bottom: 20rpx;
+	border: 1px solid #BFBFBF;
+	border-radius: 8rpx;
+	overflow: hidden;
+}
+
+.row.upload .main .images image {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.row.upload .main .images icon {
+	display: block;
+	font-size: 70rpx;
+	line-height: 100rpx;
+	text-align: center;
+}
+.mainBody .row .options{
+  box-sizing: border-box;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+.mainBody .row .options .text{
+	display: inline-block;
+}
+.mainBody .row .options .text:nth-child(2){
+	float: right;
+}
+.fillTip{
+	color: red;
+}
+.upload.fillTip{
+	border-color: red;
+}
+.lower{
+	margin-top: 20rpx;
+	background: #FFF;
+}
+/*外部容器*/
+.listview-container {
+    margin: 10rpx 10rpx;
+}
+
+/*行样式*/
+.playlog-item {
+    display: flex;
+    box-sizing: border-box;
+    padding-right: 20rpx;
+}
+
+/*时间轴*/
+.playlog-item .dotline {
+    width: 70rpx;
+    position: relative;
+}
+
+/*竖线*/
+.playlog-item .dotline .line {
+    width: 2rpx;
+    height: 100%;
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    left: 30rpx; 
+}
+
+/*圆点*/
+.playlog-item .dotline .dot {
+    width: 22rpx;
+    height: 22rpx; 
+    background: #30ac63;
+    position: absolute; 
+    top: 20rpx; 
+    left: 20rpx; 
+    border-radius: 50%; 
+}
+
+/*时间戳*/
+.playlog-item .dotline .time {
+    width: 100%;
+    position: absolute;
+    margin-top: 60rpx;
+    z-index: 99;
+    font-size: 28rpx;
+    color: #777;
+    text-align: center;
+}
+
+/*右侧主体内容*/
+.playlog-item .textContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    margin: 6rpx 0;
+}
+
+/*章节部分*/
+.playlog-item .textContent .chapter {
+    font-size: 30rpx;
+    line-height: 68rpx;
+    color: #444;
+    white-space: normal;
+    padding-right: 20rpx;
+}
+
+/*课程部分*/
+.playlog-item .textContent .course {
+    font-size: 28rpx;
+    line-height: 56rpx;
+    color: #000;
+}
+.playlog-item .textContent .course .time{
+	float: right;
+	color: #696969;
+}
+.playlog-item .textContent .option {
+    font-size: 28rpx;
+    line-height: 56rpx;
+    color: #999;
+}
+.flow {
+	font-size:30rpx;
+	padding:20rpx 20rpx 20rpx;
+}
+.content .upper .title {
+	font-size:30rpx;
+	color:#000;
+	margin-bottom:22rpx;
+	font-weight: 700;
+}
+
+/* 文件 */
+.row.upload {
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.row.upload .label {
+	box-sizing: border-box;
+	width: 100%;
+	line-height: 60rpx;
+	font-size: 28rpx;
+	/* color: #101010; */
+}
+
+.row.upload .main {
+	box-sizing: border-box;
+	position: unset;
+	width: 100%;
+	height: auto;
+	padding: 0;
+	padding-top: 20rpx;
+}
+
+.row.upload .main .images {
+	box-sizing: border-box;
+	float: left;
+	width: 100rpx;
+	height: 100rpx;
+	margin-right: 20rpx;
+	margin-bottom: 20rpx;
+	border: 1px solid #BFBFBF;
+	border-radius: 8rpx;
+	overflow: hidden;
+}
+
+.row.upload .main .images image {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.row.upload .main .images icon {
+	display: block;
+	font-size: 70rpx;
+	line-height: 100rpx;
+	text-align: center;
+}
+.upload.fillTip{
+	border-color: red;
+}

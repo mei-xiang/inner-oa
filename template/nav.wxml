@@ -1,0 +1,27 @@
+<template name="toastInput">
+	<view class='toast-box' hidden='{{!ifShow}}' data-text='{{dataText}}'>
+		<view class='toastbg'></view>
+		<view class='showToast'>
+			<view class='toast-title'>
+				<text>审批意见</text>
+			</view>
+			<view class='toast-main'>
+				<view class='toast-input'>
+					<textarea placeholder='请输入审批意见' bindinput='setValue' data-name='stuEidtName'></textarea>
+				</view>
+			</view>
+			<view class='toast-button'>
+				<view class='button1'>
+					<button catchtap='taskCancel'>取消</button>
+				</view>
+				<view class='button2'>
+					<button catchtap='taskConfirm'>确定</button>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<template name="moreBtn">
+  <view class='model' bindtap='{{item.fn}}' formType='submit' data-type = "{{item.type}}">{{item.name}}</view>
+</template>

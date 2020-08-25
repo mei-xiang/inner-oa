@@ -1,0 +1,17 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<!-- rich-text.wxml -->
+<view style="margin-top:{{navH}}px">
+  <view class="notice-title">{{noticTitle}}</view>
+  <view class="notic-from">
+    <view></view>
+    <view style="margin-right:32rpx;">发送人：{{name}}</view>
+  </view>
+  <view style="margin-left:10rpx;margin-right:10rpx;">
+    <rich-text nodes="{{nodes}}" space="emsp"></rich-text>
+  </view>
+</view>

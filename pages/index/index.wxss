@@ -1,0 +1,103 @@
+page {
+  background: #F0F0F0;
+
+}
+
+.content {
+  /* margin-top: 66px; */
+  box-sizing: border-box;
+  padding: 32rpx;
+  border-top: 2rpx solid #FFF;
+  background: #F0F0F0;
+  position: absolute;
+  padding-top: 40rpx;
+  /* bottom:0px;  */
+  top: 132rpx;
+
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  float: left;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+
+.contentItem {
+  margin-bottom: 36rpx;
+}
+
+.contentItem:first-of-type {
+  margin-top: 0rpx;
+}
+
+.informTime {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  width: 40%;
+  padding: 6rpx;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+  text-align: center;
+
+
+}
+
+.informDetail {
+  background: #fff;
+  width: 265px;
+  color: #000;
+  padding: 24rpx;
+  margin: 0 auto;
+}
+
+.inform-title {
+  line-height: 50rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.inform-detail {
+  font-size: 24rpx;
+  line-height: 36rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 52rpx;
+}
+
+.inform-name {
+  font-size: 24rpx;
+  line-height: 60rpx;
+  margin-bottom: 24rpx;
+}
+
+.detail {
+  color: rgb(0, 153, 255);
+  border-top: 2rpx solid rgb(190, 187, 187);
+  padding: 24rpx 16rpx 16rpx 16rpx;
+}
+
+.iconfont {
+  float: right;
+  color: #000;
+  margin-top: -18rpx;
+}
+
+.release-message{
+  position: fixed;
+  bottom: 120rpx;
+  right: 0rpx;
+  width: 120rpx;
+  height: 60rpx;
+  color: #00a2e9;
+  background: #FFF;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

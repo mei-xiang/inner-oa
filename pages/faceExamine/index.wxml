@@ -1,0 +1,17 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class="content">
+	<camera class="camera" device-position="front" flash="off" binderror="goError">
+    <cover-view class='arc'></cover-view>
+  </camera>
+</view>
+<block wx:if="{{isFist}}">
+  <button class="butt" id="bangding" type="primary" bindtap="takePhoto" style="background:#00A2E9;">绑定</button>
+</block>
+<block wx:if="{{isFist === false}}">
+  <button class="butt" id="denglu" type="primary" bindtap="takePhoto" style="background:#00A2E9;">登录</button>
+</block>

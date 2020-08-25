@@ -1,0 +1,38 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <!-- <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon> -->
+  </view>
+</view>
+<scroll-view class="content" scroll-y="true" scroll-into-view="{{toView}}" style="height:{{height}}px">
+  <view class="contentItem"  wx:for="{{incomeList}}" wx:key="" id="{{item.viewId}}">
+      <view class="container"  bindtap="{{item.fn}}" data-wid="{{item.noticeId}}">
+          <view class="informTime">
+            {{item.time}}
+          </view>
+          <view class="informDetail">
+              
+              <view class="inform-title">
+                  <image class="avatar" src="{{item.userPhoto}}"></image>
+                  {{item.text}}
+                </view>
+                <view class="inform-detail">
+                 <rich-text nodes="{{item.content}}" space="emsp"></rich-text>
+                 </view>
+                <view class="inform-name">
+                  发送人:{{item.name}}
+                </view>
+          <view class="detail" id="{{item.id}}">
+          详情
+          <icon class='iconfont icon-details'></icon>
+          </view>
+          </view>
+        </view>
+    </view>
+</scroll-view>
+
+<view class="release-message" bindtap="toReleaseMessage" wx:if="{{canPublish}}">
+  发布
+</view>
+
+

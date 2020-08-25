@@ -1,0 +1,22 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='mid' style="margin-top:{{navH}}px">
+  <view class='row' bindtap='SettingPassword'>
+    {{password}}
+    <icon class='iconfont icon-details'></icon>
+  </view>
+  <!-- <view class='row' hidden="{{!showVal}}" bindtap='goUpdataFace'>
+    {{updataFace}}
+    <icon class='iconfont icon-details'></icon>
+  </view> -->
+  <view class='row' hidden="{{!showVal}}" bindtap='goOut'>
+    {{loginOut}}
+  <icon class='iconfont icon-details'></icon>
+  </view>
+</view>
+
+

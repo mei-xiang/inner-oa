@@ -1,0 +1,131 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{business}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='title'>进件信息</view>
+  <view class='mainBody'>
+    <view class='row'>
+      <view class='label mustFill'>申请编号</view>
+      <view class='main'>
+        LA2213242
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>申请时间</view>
+      <view class='main'>
+        2017-7-23
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>卖方名称</view>
+      <view class='main'>
+        王铁柱
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>手机号码</view>
+      <view class='main'>
+        13798236129
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>证件类型</view>
+      <view class='main'>
+        身份证
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>证件号码</view>
+      <view class='main'>
+        429006199709275896
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>婚姻情况</view>
+      <view class='main'>
+        未婚
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>物业地址</view>
+      <view class='main'>
+        广东省 深圳市 福田区
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>详细地址</view>
+      <view class='main'>
+        车公庙 纯K
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>借款金额</view>
+      <view class='main'>
+        1000 元
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>成交价</view>
+      <view class='main'>
+        1000 元
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>订金</view>
+      <view class='main'>
+        1000 元
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>欠款金额</view>
+      <view class='main'>
+        1000 元
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>原贷款机构</view>
+      <view class='main'>
+        无
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label'>备注</view>
+      <view class='main'>
+        无
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label'>预计出款时间</view>
+      <view class='main'>
+        2018-12-1
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>业务单情况</view>
+      <view class='main'>
+        无
+      </view>
+    </view>
+  </view>
+  <view class='title'>卖方资料</view>
+  <view class='mainBody'>
+    <view class='area clear'>
+      <button>身份证</button>
+      <button>户口本</button>
+      <button>征信报告</button>
+      <button>房产证</button>
+      <button>婚姻证明</button>
+    </view>
+  </view>
+  <view class='title'>交易资料</view>
+  <view class='mainBody'>
+    <view class='area clear'>
+      <button>买卖合同</button>
+    </view>
+  </view>
+  <button class='submitBtn' bindtap=''>补全信息</button>
+  <button class='submitBtn' bindtap=''>提交</button>
+</view>

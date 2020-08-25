@@ -1,0 +1,626 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='tabTop'>
+    <scroll-view class='tab-h' scroll-x="true" scroll-left="{{scrollLeft}}">
+      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">交易赎楼</view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">转贷</view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">贷前垫资</view>
+      <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">首付款垫资</view>
+    </scroll-view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}px">
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class='title'>进件信息</view>
+        <view class='mainBody'>
+          <view class='row'>
+            <view class='label mustFill'>申请编号</view>
+            <view class='main'>
+              <input placeholder='输入申请编号'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>申请时间</view>
+            <view class='main'>
+              <picker bindchange="bindDateChange" mode="date" value="{{date}}" >
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{date}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>卖方名称</view>
+            <view class='main'>
+              <input placeholder='输入卖方名称'></input>
+            </view>
+          </view> 
+          <view class='row'>
+            <view class='label mustFill'>手机号码</view>
+            <view class='main'>
+              <input placeholder='请输入您的手机号'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>证件类型</view>
+            <view class='main'>
+              <picker bindchange="bindCertificatesChange" value="{{certificatesIndex}}" range="{{certificatesArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{certificatesArray[certificatesIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>证件号码</view>
+            <view class='main'>
+              <input placeholder='输入相应证件号码'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>婚姻情况</view>
+            <view class='main'>
+              <picker bindchange="bindMarriageChange" value="{{marriageIndex}}" range="{{marriageArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{marriageArray[marriageIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>物业地址</view>
+            <view class='main'>
+              <import src="../../model/model.wxml" />
+              <view class="infoText" bindtap="translate">{{province}} {{city}} {{county}}</view>
+              <template is="areaData" data="{{...item}}" />
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>详细地址</view>
+            <view class='main'>
+              <input placeholder='请输入详细地址'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>借款金额</view>
+            <view class='main'>
+              <input placeholder='输入借款金额（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>成交价</view>
+            <view class='main'>
+              <input placeholder='输入成交价（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>订金</view>
+            <view class='main'>
+              <input placeholder='输入订金（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>欠款金额</view>
+            <view class='main'>
+              <input placeholder='输入欠款金额（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>原贷款机构</view>
+            <view class='main'>
+              <picker bindchange="bindBankChange" value="{{bankIndex}}" range="{{bankArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{bankArray[bankIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label'>备注</view>
+            <view class='main'>
+              <input placeholder='请输入相应备注'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label'>预计出款时间</view>
+            <view class='main'>
+              <input placeholder='请输入预计出款时间'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>业务单情况</view>
+            <view class='main'>
+              <input placeholder='请在此描述'></input>
+            </view>
+          </view>
+        </view>
+        <view class='title'>卖方资料</view>
+        <view class='mainBody'>
+          <view class='area clear'>
+            <button>身份证</button>
+            <button>户口本</button>
+            <button>征信报告</button>
+            <button>房产证</button>
+            <button>婚姻证明</button>
+          </view>
+        </view>
+        <view class='title'>交易资料</view>
+        <view class='mainBody'>
+          <view class='area clear'>
+            <button>买卖合同</button>
+          </view>
+        </view>
+        <button class='submitBtn' bindtap=''>提交</button>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class='title'>进件信息</view>
+        <view class='mainBody'>
+          <view class='row'>
+            <view class='label mustFill'>申请编号</view>
+            <view class='main'>
+              <input placeholder='输入申请编号'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>申请时间</view>
+            <view class='main'>
+              <picker bindchange="bindDateChange" mode="date" value="{{date}}" >
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{date}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>卖方名称</view>
+            <view class='main'>
+              <input placeholder='输入卖方名称'></input>
+            </view>
+          </view> 
+          <view class='row'>
+            <view class='label mustFill'>手机号码</view>
+            <view class='main'>
+              <input placeholder='请输入您的手机号'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>证件类型</view>
+            <view class='main'>
+              <picker bindchange="bindCertificatesChange" value="{{certificatesIndex}}" range="{{certificatesArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{certificatesArray[certificatesIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>证件号码</view>
+            <view class='main'>
+              <input placeholder='输入相应证件号码'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>婚姻情况</view>
+            <view class='main'>
+              <picker bindchange="bindMarriageChange" value="{{marriageIndex}}" range="{{marriageArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{marriageArray[marriageIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>物业地址</view>
+            <view class='main'>
+              <import src="../../model/model.wxml" />
+              <view class="infoText" bindtap="translate">{{province}} {{city}} {{county}}</view>
+              <template is="areaData" data="{{...item}}" />
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>详细地址</view>
+            <view class='main'>
+              <input placeholder='请输入详细地址'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>借款金额</view>
+            <view class='main'>
+              <input placeholder='输入借款金额（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>成交价</view>
+            <view class='main'>
+              <input placeholder='输入成交价（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>订金</view>
+            <view class='main'>
+              <input placeholder='输入订金（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>欠款金额</view>
+            <view class='main'>
+              <input placeholder='输入欠款金额（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>原贷款机构</view>
+            <view class='main'>
+              <picker bindchange="bindBankChange" value="{{bankIndex}}" range="{{bankArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{bankArray[bankIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label'>备注</view>
+            <view class='main'>
+              <input placeholder='请输入相应备注'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label'>预计出款时间</view>
+            <view class='main'>
+              <input placeholder='请输入预计出款时间'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>业务单情况</view>
+            <view class='main'>
+              <input placeholder='请在此描述'></input>
+            </view>
+          </view>
+        </view>
+        <view class='title'>卖方资料</view>
+        <view class='mainBody'>
+          <view class='area clear'>
+            <button>身份证</button>
+            <button>户口本</button>
+            <button>征信报告</button>
+            <button>房产证</button>
+            <button>婚姻证明</button>
+          </view>
+        </view>
+        <view class='title'>交易资料</view>
+        <view class='mainBody'>
+          <view class='area clear'>
+            <button>买卖合同</button>
+          </view>
+        </view>
+        <button class='submitBtn' bindtap=''>提交</button>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class='title'>进件信息</view>
+        <view class='mainBody'>
+          <view class='row'>
+            <view class='label mustFill'>申请编号</view>
+            <view class='main'>
+              <input placeholder='输入申请编号'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>申请时间</view>
+            <view class='main'>
+              <picker bindchange="bindDateChange" mode="date" value="{{date}}" >
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{date}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>卖方名称</view>
+            <view class='main'>
+              <input placeholder='输入卖方名称'></input>
+            </view>
+          </view> 
+          <view class='row'>
+            <view class='label mustFill'>手机号码</view>
+            <view class='main'>
+              <input placeholder='请输入您的手机号'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>证件类型</view>
+            <view class='main'>
+              <picker bindchange="bindCertificatesChange" value="{{certificatesIndex}}" range="{{certificatesArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{certificatesArray[certificatesIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>证件号码</view>
+            <view class='main'>
+              <input placeholder='输入相应证件号码'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>婚姻情况</view>
+            <view class='main'>
+              <picker bindchange="bindMarriageChange" value="{{marriageIndex}}" range="{{marriageArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{marriageArray[marriageIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>物业地址</view>
+            <view class='main'>
+              <import src="../../model/model.wxml" />
+              <view class="infoText" bindtap="translate">{{province}} {{city}} {{county}}</view>
+              <template is="areaData" data="{{...item}}" />
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>详细地址</view>
+            <view class='main'>
+              <input placeholder='请输入详细地址'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>借款金额</view>
+            <view class='main'>
+              <input placeholder='输入借款金额（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>成交价</view>
+            <view class='main'>
+              <input placeholder='输入成交价（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>订金</view>
+            <view class='main'>
+              <input placeholder='输入订金（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>欠款金额</view>
+            <view class='main'>
+              <input placeholder='输入欠款金额（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>原贷款机构</view>
+            <view class='main'>
+              <picker bindchange="bindBankChange" value="{{bankIndex}}" range="{{bankArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{bankArray[bankIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label'>备注</view>
+            <view class='main'>
+              <input placeholder='请输入相应备注'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label'>预计出款时间</view>
+            <view class='main'>
+              <input placeholder='请输入预计出款时间'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>业务单情况</view>
+            <view class='main'>
+              <input placeholder='请在此描述'></input>
+            </view>
+          </view>
+        </view>
+        <view class='title'>卖方资料</view>
+        <view class='mainBody'>
+          <view class='area clear'>
+            <button>身份证</button>
+            <button>户口本</button>
+            <button>征信报告</button>
+            <button>房产证</button>
+            <button>婚姻证明</button>
+          </view>
+        </view>
+        <view class='title'>交易资料</view>
+        <view class='mainBody'>
+          <view class='area clear'>
+            <button>买卖合同</button>
+          </view>
+        </view>
+        <button class='submitBtn' bindtap=''>提交</button>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class='title'>进件信息</view>
+        <view class='mainBody'>
+          <view class='row'>
+            <view class='label mustFill'>申请编号</view>
+            <view class='main'>
+              <input placeholder='输入申请编号'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>申请时间</view>
+            <view class='main'>
+              <picker bindchange="bindDateChange" mode="date" value="{{date}}" >
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{date}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>卖方名称</view>
+            <view class='main'>
+              <input placeholder='输入卖方名称'></input>
+            </view>
+          </view> 
+          <view class='row'>
+            <view class='label mustFill'>手机号码</view>
+            <view class='main'>
+              <input placeholder='请输入您的手机号'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>证件类型</view>
+            <view class='main'>
+              <picker bindchange="bindCertificatesChange" value="{{certificatesIndex}}" range="{{certificatesArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{certificatesArray[certificatesIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>证件号码</view>
+            <view class='main'>
+              <input placeholder='输入相应证件号码'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>婚姻情况</view>
+            <view class='main'>
+              <picker bindchange="bindMarriageChange" value="{{marriageIndex}}" range="{{marriageArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{marriageArray[marriageIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>物业地址</view>
+            <view class='main'>
+              <import src="../../model/model.wxml" />
+              <view class="infoText" bindtap="translate">{{province}} {{city}} {{county}}</view>
+              <template is="areaData" data="{{...item}}" />
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>详细地址</view>
+            <view class='main'>
+              <input placeholder='请输入详细地址'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>借款金额</view>
+            <view class='main'>
+              <input placeholder='输入借款金额（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>成交价</view>
+            <view class='main'>
+              <input placeholder='输入成交价（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>订金</view>
+            <view class='main'>
+              <input placeholder='输入订金（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>欠款金额</view>
+            <view class='main'>
+              <input placeholder='输入欠款金额（默认单位/元）'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>原贷款机构</view>
+            <view class='main'>
+              <picker bindchange="bindBankChange" value="{{bankIndex}}" range="{{bankArray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{bankArray[bankIndex]}}</view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label'>备注</view>
+            <view class='main'>
+              <input placeholder='请输入相应备注'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label'>预计出款时间</view>
+            <view class='main'>
+              <input placeholder='请输入预计出款时间'></input>
+            </view>
+          </view>
+          <view class='row'>
+            <view class='label mustFill'>业务单情况</view>
+            <view class='main'>
+              <input placeholder='请在此描述'></input>
+            </view>
+          </view>
+        </view>
+        <view class='title'>卖方资料</view>
+        <view class='mainBody'>
+          <view class='area clear'>
+            <button>身份证</button>
+            <button>户口本</button>
+            <button>征信报告</button>
+            <button>房产证</button>
+            <button>婚姻证明</button>
+          </view>
+        </view>
+        <view class='title'>交易资料</view>
+        <view class='mainBody'>
+          <view class='area clear'>
+            <button>买卖合同</button>
+          </view>
+        </view>
+        <button class='submitBtn' bindtap=''>提交</button>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

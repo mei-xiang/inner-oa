@@ -1,0 +1,61 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='tabTop'>
+    <scroll-view class='tab-h' scroll-x="true" scroll-left="{{scrollLeft}}">
+      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">待办</view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">已办</view>
+    </scroll-view>
+  </view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}px">
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class='information'>
+          <view class='con'>
+            <block wx:for='{{workingList}}' wx:key=''>
+              <view class='row' bindtap='{{item.fn}}' data-businessType='{{item.typeNo}}'>
+                <view class='logo'>
+                  <icon class='iconfont {{item.ico}}'></icon>
+                </view>
+                <view class='text'>
+                  <view class='name'>{{item.name}}({{item.businessType}})</view>
+                  <view class='time'>{{item.time}}</view>
+                </view>
+                <view class='state'>
+                  <icon class='iconfont icon-more'></icon>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class='information'>
+          <view class='con'>
+            <block wx:for='{{endingList}}' wx:key=''>
+              <view class='row' bindtap='{{item.fn}}' data-businessType='{{item.typeNo}}'>
+                <view class='logo'>
+                  <icon class='iconfont {{item.ico}}'></icon>
+                </view>
+                <view class='text'>
+                  <view class='name'>{{item.name}}({{item.businessType}})</view>
+                  <view class='time'>{{item.time}}</view>
+                </view>
+                <view class='state active'>
+                  <icon class='iconfont icon-right'></icon>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    
+  </swiper>
+</view>

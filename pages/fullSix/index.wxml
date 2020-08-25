@@ -1,0 +1,116 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title' data-bustype='{{business}}'>
+    ({{business}})已办
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='stepBody clear'>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+        <view class='round active right'></view>
+      </view>
+    </view>
+  </view>
+  <view class='bodyTitle'>项目信息</view>
+  <view class='title' style='margin: 0;'>签署合同</view>
+  <view class='mainBody'>
+    <view class='row'>
+      <view class='label mustFill'>合同签署日期</view>
+      <view class='main'>
+        <input placeholder='输入合同签署时间，具体到日'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>经办人意见</view>
+      <view class='main'>
+        <input placeholder='输入经办人意见'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>按揭经理决策</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>分配按揭员</view>
+      <view class='main'>
+        <input placeholder='请输入按揭人员姓名'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>报单信息</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>业务单情况</view>
+      <view class='main'>
+        <input placeholder='输入业务单情况叙述'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>流程审批</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>区域经理审批</view>
+      <view class='main'>
+        <input placeholder='是否同意'></input>
+      </view>
+    </view>
+  </view>
+  <view class='title'>审批意见(风控审批)</view>
+  <view class='mainBody'>
+   <view class='row'>
+      <view class='label mustFill'>借款人情况</view>
+      <view class='main'>
+        <input placeholder='输入审批意见'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>借款用途</view>
+      <view class='main'>
+        <input placeholder='输入审批意见'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>回款来源</view>
+      <view class='main'>
+        <input placeholder='输入审批意见'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>负债情况</view>
+      <view class='main'>
+        <input placeholder='输入审批意见'></input>
+      </view>
+    </view>
+    <view class='row'>
+      <view class='label mustFill'>风控点</view>
+      <view class='main'>
+        <input placeholder='输入审批意见'></input>
+      </view>
+    </view>
+  </view>
+  <view class='btn clear'>
+    <button class='backBtn' bindtap='navBack' data-businessType='{{business}}'>上一页</button>
+    <button class='nextBtn' bindtap='goNext' data-businessType='{{business}}'>确认</button>
+  </view>
+</view>

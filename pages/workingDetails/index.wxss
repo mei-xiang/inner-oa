@@ -1,0 +1,124 @@
+/* modelTest.wxss */
+@import '../../model/model.wxss';
+
+page{
+  background: #F0F4F7;
+}
+.content{
+  margin-top: 86px;
+}
+
+.content .title{
+  margin-top: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  background: #FFF;
+  height: 40px;
+  line-height: 40px;
+  padding:0 16px;
+  font-size: 12px;
+  color: #101010;
+  border-bottom: 1px solid #F2F2F2; 
+}
+.mainBody{
+  box-sizing: border-box;
+  width: 100%;
+  background: #FFF;
+  padding:0 16px;
+}
+.mainBody .row{
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #F2F2F2;
+  position: relative
+}
+.mainBody .area{
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  padding: 10px 0 0 0 ;
+}
+
+.mainBody .area button{
+  float: left;
+  width: 32%;
+  height: 30px;
+  border-radius: 2px;
+  background-color: rgba(68, 151, 193, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 12px;
+  border: none;
+  margin-right: 2%;
+  margin-bottom: 10px;
+}
+.mainBody .area button:nth-child(3n){
+  margin-right: 0;
+}
+.mainBody .row.more{
+  height: 100px;
+}
+.mainBody .row .label{
+  box-sizing: border-box;
+  width: 30%;
+  line-height: 40px;
+  font-size: 12px;
+  color: #101010;
+}
+.mainBody .row .label.mustFill::before{
+  content: '*';
+  display: inline-block;
+  color: red;
+}
+
+.mainBody .row .main{
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 30%;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
+  font-size: 12px;
+}
+.mainBody .row .main .picker{
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #101010;
+  position: relative;
+}
+.mainBody .row .main input{
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #101010;
+  position: relative;
+}
+
+.mainBody .row .main .infoText{
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #101010;
+  position: relative;
+  margin: 0;
+  text-align: left;
+}
+.submitBtn{
+  box-sizing: border-box;
+  margin: 50px 32px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: rgba(43, 142, 200, 1);
+  color: #FFF;
+  font-size: 14px;
+}

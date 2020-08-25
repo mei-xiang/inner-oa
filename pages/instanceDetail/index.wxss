@@ -1,0 +1,462 @@
+page {
+  background: #F0F4F7;
+}
+
+.content {
+  margin-top: 66px;
+  box-sizing: border-box;
+}
+
+.topInfo {
+  background: #FFF;
+  box-sizing: border-box;
+  position: relative;
+  height: 180rpx;
+  border-bottom: 1px solid #F2F2F2;
+}
+
+.topInfo .logo {
+  box-sizing: border-box;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 32rpx;
+  transform: translateY(-50%);
+}
+
+.topInfo .logo icon {
+  font-size: 50rpx;
+  color: #2b8ec8;
+}
+
+.topInfo .state {
+  box-sizing: border-box;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  right: 32rpx;
+  transform: translateY(-50%);
+  color: #2b8ec8;
+  font-size: 28rpx;
+}
+
+.topInfo .text {
+  padding: 50rpx 120rpx 0 120rpx;
+}
+
+.topInfo .text .name {
+  font-size: 28rpx;
+  color: #101010;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topInfo .text .time {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #101010;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flow {
+  margin-top: 40rpx;
+  background: #FFF;
+  box-sizing: border-box;
+}
+
+.flow .row {
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #101010;
+
+}
+
+.flow .row.title {
+  border-bottom: 2rpx solid #F2F2F2;
+}
+
+.flow .row.active {
+  color: #4497C1;
+}
+
+.flow .row .part {
+  float: left;
+  width: 35%;
+  height: 80rpx;
+  font-size: 22rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.flow .row .part:nth-child(2) {
+  width: 20%;
+}
+
+.flow .row .part:nth-child(3) {
+  width: 45%;
+}
+
+.flow .row .name {
+  text-align: left;
+  position: relative;
+  padding-left: 32rpx;
+  border-bottom: 2rpx solid #F2F2F2;
+}
+
+.flow .row .name::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16rpx;
+  height: 16rpx;
+  top: 32rpx;
+  left: 0;
+  border: 2rpx solid #ABABAB;
+  border-radius: 50%;
+}
+
+.flow .row.active .name::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16rpx;
+  height: 16rpx;
+  top: 32rpx;
+  left: 0;
+  border: 2rpx solid #4497C1;
+  border-radius: 50%;
+}
+
+.flow .row .time {
+  text-align: right;
+  border-bottom: 2rpx solid #F2F2F2;
+}
+
+.flow .row .state {
+  border-bottom: 2rpx solid #F2F2F2;
+}
+
+.content {
+  margin-top: 135rpx;
+  box-sizing: border-box;
+  background: #FFF;
+  padding: 0 50rpx;
+}
+
+.row {
+  /* box-sizing: border-box; */
+  width: 100%;
+  height: 60rpx;
+  position: relative
+}
+
+.row.active {
+  height: auto;
+  padding-bottom: 20rpx;
+
+}
+
+.row .label {
+  /* box-sizing: border-box; */
+  width: 30%;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #999;
+  /* text-align: right; */
+}
+
+.row.active .label {
+  width: 100%;
+  /* text-indent:-4px; */
+}
+
+.content-text {
+  color: #000;
+  text-align: left;
+
+
+}
+
+.row .label.mustFill::before {
+  content: '*';
+  display: inline-block;
+  color: red;
+}
+
+.row .main {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 30%;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #000;
+  font-size: 28rpx;
+}
+
+.row.active .main {
+  top: 0;
+  left: 0;
+  padding-left: 28%;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  line-height: 60rpx;
+}
+
+.row.active .main textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.row .main picker {
+  width: 100%;
+  height: 88rpx;
+}
+
+.row .main .picker {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #101010;
+  position: relative;
+}
+
+.row .main .picker .fb-type {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.row .main .picker .fb-type .type-label {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.row .main input {
+  width: 100%;
+  height: 100%;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #101010;
+  position: relative;
+}
+
+
+.row .main .infoText {
+  width: 100%;
+  height: 100%;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #101010;
+  position: relative;
+  margin: 0;
+  text-align: left;
+}
+
+.upper {
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+
+.lower {
+  margin-top: 20rpx;
+  background: #FFF;
+}
+
+/*外部容器*/
+.listview-container {
+  margin: 10rpx 10rpx;
+}
+
+/*行样式*/
+.playlog-item {
+  display: flex;
+  box-sizing: border-box;
+  padding-right: 20rpx;
+}
+
+/*时间轴*/
+.playlog-item .dotline {
+  width: 70rpx;
+  position: relative;
+}
+
+/*竖线*/
+.playlog-item .dotline .line {
+  width: 2rpx;
+  height: 100%;
+  background: #ccc;
+  position: absolute;
+  top: 0;
+  left: 30rpx;
+}
+
+/*圆点*/
+.playlog-item .dotline .dot {
+  width: 22rpx;
+  height: 22rpx;
+  background: #30ac63;
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  border-radius: 50%;
+}
+
+/*时间戳*/
+.playlog-item .dotline .time {
+  width: 100%;
+  position: absolute;
+  margin-top: 60rpx;
+  z-index: 99;
+  font-size: 28rpx;
+  color: #777;
+  text-align: center;
+}
+
+/*右侧主体内容*/
+.playlog-item .textContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ddd;
+  margin: 6rpx 0;
+}
+
+/*章节部分*/
+.playlog-item .textContent .chapter {
+  font-size: 30rpx;
+  line-height: 68rpx;
+  color: #444;
+  white-space: normal;
+  padding-right: 20rpx;
+}
+
+/*课程部分*/
+.playlog-item .textContent .course {
+  font-size: 28rpx;
+  line-height: 56rpx;
+  color: #000;
+}
+
+.playlog-item .textContent .course .time {
+  float: right;
+  color: #696969;
+}
+
+.playlog-item .textContent .option {
+  font-size: 28rpx;
+  line-height: 56rpx;
+  color: #999;
+}
+
+.flow {
+  font-size: 30rpx;
+  padding: 20rpx 20rpx 20rpx;
+}
+
+.content .upper .title {
+  font-size: 30rpx;
+  color: #000;
+  margin-bottom: 22rpx;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 文件 */
+.row.upload {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.row.upload .label {
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  /* color: #101010; */
+}
+
+.row.upload .main {
+  box-sizing: border-box;
+  position: unset;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  padding-top: 20rpx;
+}
+
+.row.upload .main .images {
+  box-sizing: border-box;
+  float: left;
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  border: 1px solid #BFBFBF;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.row.upload .main .images image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.row.upload .main .images icon {
+  display: block;
+  font-size: 70rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.upload.fillTip {
+  border-color: red;
+}
+
+.reback-btn {
+  width: 180rpx;
+  height: 65rpx;
+  color: #FFF;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  margin-right: 8rpx;
+  background-color: rgb(245, 78, 106);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:none;
+}
+
+.is-reback {
+  width: 160rpx;
+  height: 65rpx;
+  color: rgb(83, 78, 78);
+  font-size: 28rpx;
+  line-height: 30rpx;
+  margin-right: 8rpx;
+  background-color: rgb(230, 219, 219);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:none;
+}

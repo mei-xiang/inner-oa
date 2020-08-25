@@ -1,0 +1,53 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='row'>
+    <view class='label mustFill'>业务类型</view>
+    <view class='main'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          <view class="fb-type">
+            <view class="type-label">{{array[index]}}</view>
+          </view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label mustFill'>真实姓名</view>
+    <view class='main'>
+      <input placeholder='请输入您的真实姓名'></input>
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label mustFill'>手机号码</view>
+    <view class='main'>
+      <input placeholder='请输入您的手机号'></input>
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label mustFill'>所在区域</view>
+    <view class='main'>
+      <import src="../../model/model.wxml"/>
+      <view class="infoText" bindtap="translate">{{province}} {{city}} {{county}}</view>
+      <template is="areaData" data="{{...item}}"/>
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>贷款金额</view>
+    <view class='main'>
+      <input placeholder='输入贷款金额（默认单位/元）'></input>
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>借款期限</view>
+    <view class='main'>
+      <input placeholder='输入借款天数（如:30天）'></input>
+    </view>
+  </view>
+</view>
+<button class='submitBtn' bindtap='goNext'>立即申请</button>

@@ -1,0 +1,27 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class="mid" style="margin-top: {{navH}}px">
+  <form bindsubmit='getPassword'>
+    <view class="row">
+      旧密码:
+      <input name='oldName' type='text' password='ture' placeholder='' value=""></input>
+    </view>
+    <view class="row">
+      新密码:
+      <input name='newName' type='text' password='ture' placeholder='' value=""></input>
+    </view>
+    <view class="row">
+      确认密码:
+      <input class="last" name='sureName' type='text' password='ture' placeholder='' value=""></input>
+    </view>
+    <view class='buttonBody' >
+        <button class='submitBtn' formType="submit">确认修改</button>
+      </view>
+  </form>
+</view>
+
+

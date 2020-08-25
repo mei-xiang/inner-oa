@@ -1,0 +1,95 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title' data-bustype='{{business}}'>
+    ({{business}})已办
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='stepBody clear'>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con active'>
+        <view class='round active left'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='con'>
+        <view class='round active left'></view>
+        <view class='round right'></view>
+      </view>
+    </view>
+  </view>
+  <view class='bodyTitle'>资料信息</view>
+  <view class='title' style='margin: 0;'>卖方资料</view>
+  <view class='mainBody'>
+    <view class='area clear'>
+      <button>身份证</button>
+      <button>户口本</button>
+      <button>征信报告</button>
+      <button>企业资料</button>
+      <button>人法网查询</button>
+      <button>房产证</button>
+      <button>土地证</button>
+      <button>房产证明</button>
+      <button>收款银行卡</button>
+      <button>还款银行卡</button>
+      <button>退款卡</button>
+      <button>征信授权书</button>
+      <button>其他资料</button>
+      <button>婚姻证明</button>
+    </view>
+  </view>
+  <view class='title'>买方资料</view>
+  <view class='mainBody'>
+   <view class='area clear'>
+      <button>户口本</button>
+      <button>征信报告</button>
+      <button>婚姻证明</button>
+      <button>人法网查询</button>
+      <button>其他资料</button>
+      <button>身份证</button>
+    </view>
+  </view>
+  <view class='title'>交易资料</view>
+  <view class='mainBody'>
+   <view class='area clear'>
+      <button>抵押凭证</button>
+      <button>买卖补充协议</button>
+      <button>买卖合同</button>
+      <button>定金凭证</button>
+      <button>首付款凭证</button>
+      <button>贷款承诺书</button>
+      <button>其他资料</button>
+    </view>
+  </view>
+  <view class='title'>交易资料</view>
+  <view class='mainBody'>
+   <view class='area clear'>
+      <button>他项权证</button>
+      <button>公证委托书</button>
+      <button>还款记录</button>
+      <button>其他资料</button>
+      <button>出款凭证-出纳</button>
+      <button>出款凭证-按揭</button>
+      <button>回款凭证</button>
+    </view>
+  </view>
+  <view class='btn clear'>
+    <button class='backBtn' bindtap='navBack' data-businessType='{{business}}'>上一页</button>
+    <button class='nextBtn' bindtap='goNext' data-businessType='{{business}}'>下一页</button>
+  </view>
+</view>

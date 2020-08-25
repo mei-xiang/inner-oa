@@ -1,0 +1,250 @@
+/* pages/report-statistics/report-statistics.wxss */
+@import "../../lib/weui.wxss";
+
+page {
+  background: #F0F4F7;
+}
+
+.mid {
+  margin-top: 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background: #FFf;
+  padding-left: 32rpx;
+  border-bottom: 2rpx solid #F2F2F2;
+  border-top: 2rpx solid #F2F2F2;
+}
+
+.mid .row {
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 1px solid #F2F2F2;
+  height: 88rpx;
+  position: relative;
+  line-height: 88rpx;
+  color: #000;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.mid .row:last-child {
+  border-bottom: none;
+}
+
+.mid .row icon {
+  font-size: 32rpx;
+  color: #2B8EC8;
+  margin-right: 16rpx;
+}
+
+.mid .row .icon-details {
+  font-size: 48rpx;
+  color: #ABABAB;
+  float: right;
+}
+
+
+
+.line {
+  background-color: #f5f5f5;
+  height: 2rpx;
+  width: 100%;
+}
+
+.weui-navbar {
+  position: fixed;
+  top: 166rpx;
+  display: flex;
+  height: 88rpx;
+  width: 100%;
+  background: #ffffff;
+  z-index: 22;
+}
+
+.weui-navbar__item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 32rpx;
+  color: #949494;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+  color: #112540;
+  font-size: 32rpx;
+}
+
+.weui-navbar__slider {
+  position: fixed;
+  content: ' ';
+  left: 22rpx;
+  top: 88rpx;
+  width: 20%;
+  height: 2px;
+  background-color: #2B8EC8;
+  transition: transform 0.3s;
+}
+
+.weui-navbar__type {
+  display: inline-block;
+  font-size: 32rpx;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  color: #949494;
+}
+
+.weui-tab__panel {
+  position: fixed;
+  top: 90rpx;
+  width: 100%;
+  z-index: 22;
+  padding-top: 0rpx;
+  box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.report-item-con {
+  background: #ffffff;
+  padding:20rpx 0rpx;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.weui-tab__content {
+  overflow: scroll;
+}
+
+.report-item-con .con-det {
+  width: 100%;
+  margin-left: 32rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.report-item-con .con-det .det-img {
+  width: 90rpx;
+  height: 90rpx;
+  flex:1;
+}
+
+.report-item-con .con-det .det-info {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  flex:6.4;
+}
+
+.report-item-con .con-det .det-info .info-name {
+  color: black;
+  font-size: 28rpx;
+}
+
+.report-item-con .con-det .det-info .info-message {
+  color: #ABABAB;
+  font-size: 24rpx;
+}
+
+.select-person-list {
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  height: 660rpx;
+  width: 100%;
+  z-index: 999;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.select-person-list .list-con {
+  border-bottom: #f5f5f5 solid 2rpx;
+}
+
+.select-person-list .list-confirm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 110rpx;
+  color: #00a2e9;
+  font-size: 30rpx;
+  border-bottom: #f5f5f5 solid 2rpx;
+}
+
+.select-person-list .list-confirm .confirm-cancel {
+  margin-left: 32rpx;
+  color: red;
+}
+
+.select-person-list .list-confirm .confirm-ensure {
+  margin-right: 32rpx;
+}
+
+.select-person-list .person-list {
+  overflow: scroll;
+  height: 550rpx;
+}
+
+.select-person-list .person-list .list-con .list-item {
+  height: 80rpx;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  color: #ABABAB;
+  justify-content: space-between;
+}
+
+.select-person-list .person-list .list-con .list-item .item-name {
+  margin-left: 20rpx;
+}
+
+.select-person-list .person-list .list-con .list-item .select-img {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 32rpx;
+}
+
+.shade {
+  background: #000;
+  opacity: 0.3;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0rpx;
+  z-index: 23;
+}
+
+.report-search {
+  background: #ffffff;
+  height: 90rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 32rpx;
+  font-size: 30rpx;
+}
+
+.report-search .select-worker-title {
+  color: black;
+  flex: 2
+}
+
+.report-search .select-worker-list {
+  margin-top: 4rpx;
+  flex: 7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}

@@ -1,0 +1,56 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+  </view>
+</view>
+<view class='content'>
+  <view class='row'>
+    <view class='label'>城市</view>
+    <view class='main'>
+      深圳
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>业务员名称</view>
+    <view class='main'>
+      阿兰德龙
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>客户名称</view>
+    <view class='main'>
+      王铁柱
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>借贷金额</view>
+    <view class='main'>
+      1,000,000.00
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>业务类型</view>
+    <view class='main'>
+      赎楼业务
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>任务名称</view>
+    <view class='main'>
+      财务复核
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>上一步审批人</view>
+    <view class='main'>
+      刘富贵
+    </view>
+  </view>
+  <view class='row'>
+    <view class='label'>接收任务时间</view>
+    <view class='main'>
+      2017-10-27 14:29:56
+    </view>
+  </view>
+</view>

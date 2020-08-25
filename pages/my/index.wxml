@@ -1,0 +1,43 @@
+<view class='nav bg-main' style='height:{{navH}}px'>
+  <view class='nav-title'>
+    {{title}}
+    <!-- <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon> -->
+  </view>
+</view>
+<view class='content'>
+  <view class='upper'>
+    <view class='companyName'>精锐纵横</view>
+    <view class='userName'>{{userName}}</view>
+    
+      <view class='images' bindtap='settingImage'>
+        <image class='profile' src='{{ imgUrl }}'></image>
+      </view>
+  
+
+  </view>
+  <view class='mid'>
+    <view class='row' bindtap='goApprovalProgress'>
+      <icon class='iconfont icon-text_full'></icon>
+      审批进度
+    <icon class='iconfont icon-details'></icon>
+    </view>
+     <view class='row' bindtap='goReport' wx:if="{{canReport}}">
+      <icon class='iconfont icon-tool_full'></icon>
+      报表统计
+      <icon class='iconfont icon-details'></icon>
+    </view>
+    <view class='row' bindtap='goTool'>
+      <icon class='iconfont icon-tool_full'></icon>
+      工具
+      <icon class='iconfont icon-details'></icon>
+    </view>
+    <view class='row' bindtap='goSetting'>
+      <icon class='iconfont icon-set_full'></icon>
+      设置
+      <icon class='iconfont icon-details'></icon>
+    </view>
+  </view>
+  <!-- <view class='login' bindtap='goLogin'>登录</view> -->
+</view>
+
+

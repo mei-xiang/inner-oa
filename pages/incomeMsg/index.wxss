@@ -1,0 +1,123 @@
+page{
+  background: #F0F4F7;
+}
+.content{
+  margin-top: 66px;
+  box-sizing: border-box;
+}
+.topInfo{
+  background: #FFF;
+  box-sizing: border-box;
+  position: relative;
+  height: 180rpx;
+  border-bottom: 1px solid #F2F2F2;
+}
+.topInfo .logo{
+  box-sizing: border-box;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+.topInfo .logo icon{
+  font-size: 50rpx;
+  color: #2b8ec8;
+}
+.topInfo .state{
+  box-sizing: border-box;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  color: #2b8ec8;
+  font-size: 12px;
+}
+.topInfo .text{
+  padding: 50rpx 120rpx 0 120rpx;
+}
+.topInfo .text .name{
+  font-size: 12px;
+  color: #101010;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.topInfo .text .time{
+  margin-top: 10rpx;
+  font-size: 12px;
+  color: #101010;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.flow{
+  margin-top: 20px;
+  background: #FFF;
+  box-sizing: border-box;
+}
+.flow .row{
+  box-sizing: border-box;
+  padding: 0 16px;
+  height: 40px;
+  line-height: 40px;
+  color: #101010;
+  
+}
+.flow .row.title{
+  border-bottom: 1px solid #F2F2F2;
+}
+.flow .row.active{
+  color: #4497C1;
+}
+.flow .row .part{
+  float: left;
+  width: 35%;
+  height: 40px;
+  font-size: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.flow .row .part:nth-child(2){
+  width: 20%;
+}
+.flow .row .part:nth-child(3){
+  width: 45%;
+}
+.flow .row .name{
+  text-align: left;
+  position: relative;
+  padding-left: 16px;
+  border-bottom: 1px solid #F2F2F2;
+}
+.flow .row .name::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 16px;
+  left: 0;
+  border: 1px solid #ABABAB;
+  border-radius: 50%;
+}
+.flow .row.active .name::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 16px;
+  left: 0;
+  border: 1px solid #4497C1;
+  border-radius: 50%;
+}
+.flow .row .time{
+  text-align: right;
+  border-bottom: 1px solid #F2F2F2;
+}
+.flow .row .state{
+  border-bottom: 1px solid #F2F2F2;
+}

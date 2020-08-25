@@ -1,0 +1,91 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/report-statistics/report-statistics",
+    "pages/release-message/index",
+    "pages/declarationExamine/index",
+    "pages/my/index",
+    "pages/instance/index",
+    "pages/process/index",
+    "pages/instanceDetail/index",
+    "pages/workBench/index",
+    "pages/endingWork/index",
+    "pages/endingWorkTwo/index",
+    "pages/index/index",  
+    "pages/myMission/index",
+    "pages/declarationApply/index",
+    "pages/decApply/index",
+    "pages/incomingQuery/index",
+    "pages/incomeMsg/index",
+    "pages/buildApply/index",
+    "pages/full/index",
+    "pages/fullTwo/index",
+    "pages/fullThree/index",
+    "pages/fullFour/index",
+    "pages/fullFive/index",
+    "pages/fullSix/index",
+    "pages/examineFull/index",
+    "pages/examineFullTwo/index",
+    "pages/examineFullThree/index",
+    "pages/examineFullFour/index",
+    "pages/examineFullFive/index",
+    "pages/examineFullSix/index",
+    "pages/workingDetails/index",
+    "pages/examine/index",
+    "pages/examineTwo/index",
+    "pages/warning/index",
+    "pages/input/index",
+    "pages/mailList/index",
+    "pages/setting/index",
+    "pages/approvalProgress/index",
+    "pages/settingImage/index",
+    "pages/noticeDetail/index",
+    "pages/settingPassword/index",
+    "pages/faceExamine/index",
+    "pages/tool/index",
+    "pages/credential/index",
+    "pages/contacts/index",
+    "pages/workingHours/index",
+    "pages/backTrackingHours/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#00a2e9",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "img/news_1.png",
+        "iconPath": "img/news.png",
+        "pagePath": "pages/index/index",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "img/mailList_1.png",
+        "iconPath": "img/mailList.png",
+        "pagePath": "pages/declarationExamine/index",
+        "text": "审批"
+      },
+      {
+        "selectedIconPath": "img/workBench_1.png",
+        "iconPath": "img/workBench.png",
+        "pagePath": "pages/workBench/index",
+        "text": "申请"
+      },
+      {
+        "selectedIconPath": "img/my_1.png",
+        "iconPath": "img/my.png",
+        "pagePath": "pages/my/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

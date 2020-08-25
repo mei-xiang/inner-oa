@@ -1,0 +1,28 @@
+<view class="shade" wx:if="{{isSelectWorker}}" bindtap="closeShade"></view>
+<view class='nav bg-main' style='height:{{navH}}rpx'>
+    <view class='nav-title'>
+        {{title}}
+        <icon src='' mode='aspectFit' class='iconfont icon-back back' bindtap='navBack'></icon>
+    </view>
+</view>
+<view class="page" style="margin-top:{{navH}}rpx">
+    <!-- 信息填写 -->
+    <form bindsubmit="formSubmit">
+        <view class="business-input">
+            <view class="business-input-list">
+                <view class="business-input-title">标题</view>
+                <view class="business-input-det">
+                    <input type="text" name="title" id="title" placeholder="请输入消息标题" placeholder-style="color:#949494;font-size:28rpx" />
+                </view>
+            </view>
+            <view class="line"></view>
+            <view class="business-input-list-textarea">
+                <view class="business-input-title">消息详情</view>
+                <view class="business-input-det">
+                    <textarea id="message" name="message" bindinput="inputChange" placeholder="请输入消息详情" placeholder-style="color:#949494;font-size:28rpx" type="text" fixed="true"></textarea>
+                </view>
+            </view>
+        </view>
+        <button class="form-btn" formType="submit">提交</button>
+    </form>
+</view>
